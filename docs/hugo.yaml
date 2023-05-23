@@ -1,0 +1,6 @@
+# hugo configuration
+#
+# cf. https://gohugo.io/getting-started/configuration/
+
+baseURL: "/"
+title: "Wavestack"
