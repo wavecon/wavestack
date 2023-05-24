@@ -25,6 +25,28 @@ languages:
     time_format_default: "2006-01-02"
     time_format_blog: "2006-01-02"
 
+# site parameters
+#
+# cf. https://www.docsy.dev/docs/adding-content/navigation/
+params:
+  copyright: "Wavecon GmbH"
+  privacy_policy: "https://wavecon.de/de/datenschutz"
+
+  ui:
+    breadcrumb_disable: false
+    footer_about_disable: false
+    navbar_logo: false
+    navbar_translucent_over_cover_disable: false
+    sidebar_menu_compact: false
+    sidebar_menu_foldable: true
+    sidebar_search_disable: false
+
+    feedback:
+      enable: false
+
+    readingtime:
+      enable: false
+
 module:
   proxy: "direct"
   hugoVersion:
