@@ -5,6 +5,12 @@
 baseURL: "/"
 title: "Wavestack"
 
+# code blocks
+pygmentsCodeFences: true
+pygmentsUseClasses: false
+pygmentsUseClassic: false
+pygmentsStyle: "friendly"
+
 # language settings
 contentDir: "content/en"
 defaultContentLanguage: "en"
