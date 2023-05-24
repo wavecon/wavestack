@@ -25,6 +25,13 @@ languages:
     time_format_default: "2006-01-02"
     time_format_blog: "2006-01-02"
 
+# search
+#
+# cf. https://www.docsy.dev/docs/adding-content/navigation/
+gcs_engine_id: ""
+algolia_docsearch: false
+offlineSearch: true
+
 # site parameters
 #
 # cf. https://www.docsy.dev/docs/adding-content/navigation/
