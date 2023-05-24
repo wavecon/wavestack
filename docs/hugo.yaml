@@ -18,3 +18,14 @@ languages:
     weight: 1
     time_format_default: "2006-01-02"
     time_format_blog: "2006-01-02"
+
+module:
+  proxy: "direct"
+  hugoVersion:
+    extended: true
+    min: "0.111.3"
+  imports:
+    - disable: false
+      path: "github.com/google/docsy"
+    - disable: false
+      path: "github.com/google/docsy/dependencies"
