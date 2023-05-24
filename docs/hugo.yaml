@@ -4,3 +4,17 @@
 
 baseURL: "/"
 title: "Wavestack"
+
+# language settings
+contentDir: "content/en"
+defaultContentLanguage: "en"
+defaultContentLanguageInSubdir: false
+enableMissingTranslationPlaceholders: true
+
+languages:
+  en:
+    title: "Wavestack"
+    languageName: "English"
+    weight: 1
+    time_format_default: "2006-01-02"
+    time_format_blog: "2006-01-02"
