@@ -1,0 +1,12 @@
+# -*- mode: gitignore; -*-
+
+# emacs
+*~
+\#*\#
+.projectile
+.dir-locals.el
+
+# hugo
+/docs/public/
+/docs/resources/_gen/
+/docs/.hugo_build.lock
