@@ -8,3 +8,9 @@ help:  ## Show help/usage information
 
 serve-docs: ## Run documentation preview server
 	$(MAKE) -C docs serve
+
+build-docs: ## Build documentation
+	$(MAKE) -C docs build
+
+build-docs-preview: ## Build documentation (preview environments)
+	$(MAKE) -C docs build-preview

@@ -2,7 +2,7 @@
 #
 # cf. https://gohugo.io/getting-started/configuration/
 
-baseURL: "/"
+baseURL: "https://docs.wavestack.cloud"
 title: "Wavestack"
 
 # code blocks
