@@ -6,6 +6,9 @@
 .projectile
 .dir-locals.el
 
+# macos
+.DS_Store
+
 # hugo
 /docs/public/
 /docs/resources/_gen/
