@@ -25,6 +25,11 @@ languages:
     time_format_default: "2006-01-02"
     time_format_blog: "2006-01-02"
 
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
 # search
 #
 # cf. https://www.docsy.dev/docs/adding-content/navigation/
