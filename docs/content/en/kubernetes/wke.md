@@ -1,23 +1,23 @@
 ---
-title: "Gardener"
-linkTitle: "Gardener"
-description: "Manage Kubernetes clusters using Gardener"
+title: "Wavestack Kubernetes Engine"
+linkTitle: "Wavestack Kubernetes Engine"
+description: "Manage Kubernetes clusters using WKE"
 type: "docs"
 weight: 1
 ---
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- Copyright (C) 2023 Wavecon GmbH -->
 
-Gardener implements the automated management and operation of
-[Kubernetes][k8s] clusters as a service.
+Wavestack Kubernetes Engine (WKE) implements the automated management
+and operation of [Kubernetes][k8s] clusters as a service.
 
-You can read more about it on the [Gardener][gardener] documentation
-site.
+WKE is build using [Gardener][gardener] and you can find additional
+information in their [documentation][gardener-docs].
 
 ## Overview
 
 This guide walks you through creating, accessing, and using a
-Kubernetes cluster using Gardener.
+Kubernetes cluster using WKE.
 
 Specifically, you will learn how to:
 
@@ -49,7 +49,7 @@ The steps in this guide have been tested with the following versions:
 You can log into the [Gardener dashboard][wvst-gardener-dashboard]
 with your Wavestack account.
 
-![](/assets/kubernetes/gardener/gardener-dashboard.png)
+![](/assets/kubernetes/wke/gardener-dashboard.png)
 
 Additional documentation can be found in the [Gardener Dashboard
 Documentation][gardener-docs-dashboard].
@@ -60,7 +60,7 @@ Click the **+** button at the top to start the creation of a new
 Kubernetes cluster or [shoot][gardener-api-shoot] in Gardener
 parlance.
 
-![](/assets/kubernetes/gardener/gardener-db-create-cluster.png)
+![](/assets/kubernetes/wke/gardener-db-create-cluster.png)
 
 ### Configuration
 
@@ -80,7 +80,7 @@ Reference](https://gardener.cloud/docs/gardener/api-reference/).
 
 #### Infrastructure
 
-![](/assets/kubernetes/gardener/gardener-create-cluster-infra.png)
+![](/assets/kubernetes/wke/gardener-create-cluster-infra.png)
 
 Gardener supports multiple providers, specifically:
 
@@ -90,7 +90,7 @@ Gardener supports multiple providers, specifically:
 
 #### Cluster Details
 
-![](/assets/kubernetes/gardener/gardener-create-cluster-details.png)
+![](/assets/kubernetes/wke/gardener-create-cluster-details.png)
 
 The cluster details section allows you to customise various cluster
 specific settings.
@@ -121,7 +121,7 @@ set up based on the selected purpose.
 
 #### Infrastructure Details
 
-![](/assets/kubernetes/gardener/gardener-create-cluster-infra-details.png)
+![](/assets/kubernetes/wke/gardener-create-cluster-infra-details.png)
 
 **Secret**
 
@@ -146,7 +146,7 @@ Wavestack currently supports the following:
 
 #### Worker Groups
 
-![](/assets/kubernetes/gardener/gardener-create-cluster-worker-groups.png)
+![](/assets/kubernetes/wke/gardener-create-cluster-worker-groups.png)
 
 **Machine Type**
 
@@ -170,7 +170,7 @@ for
 
 #### Maintenance
 
-![](/assets/kubernetes/gardener/gardener-create-cluster-maintenance.png)
+![](/assets/kubernetes/wke/gardener-create-cluster-maintenance.png)
 
 
 Gardener configures a time window for automated cluster update tasks.
@@ -186,7 +186,7 @@ documentation.
 
 #### Hibernation
 
-![](/assets/kubernetes/gardener/gardener-create-cluster-hibernation.png)
+![](/assets/kubernetes/wke/gardener-create-cluster-hibernation.png)
 
 Some clusters are not required to run all the time and Gardener allows
 you to automatically scale-down all cluster resources to zero by
@@ -199,7 +199,7 @@ Create the cluster by clicking **Create** in the bottom right corner.
 You should see the new shoot bootstrapping in the list of clusters.
 This process can take several minutes.
 
-![](/assets/kubernetes/gardener/gardener-db-cluster-bootstrap.png)
+![](/assets/kubernetes/wke/gardener-db-cluster-bootstrap.png)
 
 {{% alert title="Quotas" %}}
 
@@ -236,7 +236,7 @@ Navigate to [your account][wvst-gardener-account] on the Gardener
 dashboard and download the kubeconfig to the garden cluster. Save it as
 `~/.garden/gardenctl-v2.yaml`.
 
-![](/assets/kubernetes/gardener/gardener-db-account-kubeconfig.png)
+![](/assets/kubernetes/wke/gardener-db-account-kubeconfig.png)
 
 ### Use kubectl
 
@@ -246,11 +246,11 @@ using kubeconfig files. You can download suitable ones files for
 your clusters from the [cluster overview][wvst-gardener-dashboard]
 page by clicking on the key symbol.
 
-![](/assets/kubernetes/gardener/gardener-db-cluster-key.png)
+![](/assets/kubernetes/wke/gardener-db-cluster-key.png)
 
 Download the **Kubeconfig - Gardenlogin** file.
 
-![](/assets/kubernetes/gardener/gardener-cluster-access.png)
+![](/assets/kubernetes/wke/gardener-cluster-access.png)
 
 The file will be named similar to
 `kubeconfig-gardenlogin--<project_id>--<cluster_name>.yaml`. Save the downloaded
@@ -342,13 +342,14 @@ NOW: 2023-06-27 06:51:28.925024573 +0000 UTC m=+144.187462730
 You can delete clusters by clicking on the three dots to the left on
 the cluster overview and choosing **Delete Cluster**
 
-![](/assets/kubernetes/gardener/gardener-db-cluster-delete.png)
+![](/assets/kubernetes/wke/gardener-db-cluster-delete.png)
 
 <!-- References -->
 
 [gardener]: https://gardener.cloud/
 [gardener-api-shoot]: https://gardener.cloud/docs/gardener/api-reference/core/#core.gardener.cloud/v1beta1.Shoot
 [gardener-cluster-autoscaler]: https://github.com/gardener/autoscaler/
+[gardener-docs]: https://gardener.cloud/docs/gardener/
 [gardener-docs-api-ref]: https://gardener.cloud/docs/gardener/api-reference/
 [gardener-docs-dashboard]: https://gardener.cloud/docs/dashboard/
 [gardener-docs-shoot-hibernation]: https://gardener.cloud/docs/gardener/usage/shoot_hibernate/
