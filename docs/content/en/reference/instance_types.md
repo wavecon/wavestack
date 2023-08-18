@@ -160,8 +160,8 @@ well suited for high-performance computing workloads.
 
 {{% alert color="info" %}}
 
-Please get in touch with our support if you require this type of
-instances. We are happy to set them up for you!
+Please [get in touch with our support](../../support) if you
+require this type of instances. We are happy to set them up for you!
 
 {{% /alert %}}
 
