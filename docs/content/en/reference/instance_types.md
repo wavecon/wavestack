@@ -206,10 +206,10 @@ Information in this document is provided in the following units:
 
 |                     |        |
 |---------------------|--------|
-| **Memory**          | GiB     |
-| **Disk**            | GiB     |
+| **Memory**          | GiB    |
+| **Disk**            | GiB    |
 | **Bandwidth**       | Gbit/s |
-| **Disk Throughput** | GiB/s   |
+| **Disk Throughput** | GiB/s  |
 
 <!-- References -->
 
