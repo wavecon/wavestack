@@ -200,13 +200,6 @@ summarised in the table below:
 | rdb\_fast | 1500         | 10000      | 0.25               | 0.5              |
 | ssd       | 10000        | 10000      | 0.75               | 0.75             |
 
-{{% alert color="info" %}}
-
-Our `ssd` class is currently based on NVMe.
-
-{{% /alert %}}
-
-
 ### Units
 
 Information in this document is provided in the following units:
