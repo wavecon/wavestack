@@ -45,6 +45,14 @@ Click on the blue Continue-Button to get to the next Page, where you can select 
 
 Select the Roles you wish to grant the Users and confirm it by clicking the blue Save-Button.
 
+- ga-admin: User can access this Project in [WKE][wvst-wke] and see, create, update and delete Clusters
+- ga-viewer: User can access this Project in [WKE][wvst-wke] and see Clusters
+- os-creator:
+- os-heat_stack_owner:
+- os-load-balancer_member
+- os-member: User can access this Project in Openstack and see, create, update and delete Resources.
+- os-reader:
+
 ![](/assets/iam/roles/roles-new-select-roles.png)
 
 Finally you will be forwarded back to the Authorization-Overview. You should see that the selected Users have now the chosen Roles in that Project.
