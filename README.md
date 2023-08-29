@@ -18,7 +18,7 @@ tools:
 
 - [Hugo][hugo-install]
 
-Once you installed these yiou can run the site with:
+Once you installed these you can run the site with:
 
 ```cli
 make serve-docs
