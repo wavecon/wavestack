@@ -18,7 +18,7 @@ cascade:
 <!-- Copyright (C) 2023 Wavecon GmbH -->
 
 Wavestack is a public cloud computing platform by [Wavecon][wavecon],
-a [Noris Networks][noris] subsidiary.
+a [noris network AG][noris] subsidiary.
 
 ## Open Source
 
