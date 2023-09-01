@@ -31,7 +31,7 @@ Wavestack is based on a variety of open-source technologies, among them:
 - [Gardener][gardener]
 - [Zitadel][zitadel]
 
-Wavecon is a member and active contributor of different open-source
+Wavecon is a member and active contributor in different open-source
 projects, such as [Sovereign Cloud Stack][scs], [Open
 Operations][open-operations] or the [CNCF][cncf-member].
 
