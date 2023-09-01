@@ -443,16 +443,6 @@ cloudConfig:
 
 cluster:
   name: k8s-capo-wvst-quickstart
-
-nodeSelector:
-  node-role.kubernetes.io/control-plane: ""
-
-tolerations:
-  - key: node.cloudprovider.kubernetes.io/uninitialized
-    value: "true"
-    effect: NoSchedule
-  - key: node-role.kubernetes.io/control-plane
-    effect: NoSchedule
 ```
 
 Use helm to install the OpenStack cloud controller manager:
@@ -465,7 +455,7 @@ Use helm to install the OpenStack cloud controller manager:
 Hang tight while we grab the latest from your chart repositories...
 ...Successfully got an update from the "cpo" chart repository
 
-❯ helm upgrade -n kube-system -i openstack-ccm cpo/openstack-cloud-controller-manager --version 2.29.0-alpha.1 --values ~/src/localhost/capo/live/occm/helm/openstack-ccm.yaml
+❯ helm upgrade -n kube-system -i openstack-ccm cpo/openstack-cloud-controller-manager --version 2.29.0-alpha.2 --values openstack-ccm.yaml
 Release "openstack-ccm" does not exist. Installing it now.
 NAME: openstack-ccm
 LAST DEPLOYED: Wed Aug 30 15:24:49 2023
