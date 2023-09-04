@@ -14,6 +14,17 @@ and operation of [Kubernetes][k8s] clusters as a service.
 WKE is build using [Gardener][gardener] and you can find additional
 information in their [documentation][gardener-docs].
 
+{{% alert color="warning" %}}
+
+Please note that WKE is currently in the **tech-preview** phase and
+has not been releases as GA.
+
+We are happy for you to try WKE, but you should be aware that we
+cannot offer SLAs on this product yet.
+
+{{% /alert %}}
+
+
 ## Overview
 
 This guide walks you through creating, accessing, and using a
