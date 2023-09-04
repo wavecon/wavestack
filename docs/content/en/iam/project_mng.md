@@ -1,7 +1,7 @@
 ---
 title: "Project Management"
 linkTitle: "Project Management"
-description: "Manage Project on the Wavestack"
+description: "Manage projects on Wavestack"
 type: "docs"
 weight: 2
 ---
@@ -10,50 +10,63 @@ weight: 2
 
 ## Overview
 
-This guide walks you through creating, updating, and deleting Projects on the Wavestack.
+This guide walks you through managing projects on Wavestack.
 
 Specifically, you will learn how to:
 
-- Create a new Projects
-- Update existing Projects
-- Delete Projects
+- Create a project
+- Manage roles in a project
 
-## Create a new Project
+## Project dashboard
 
-On the Dashboard click on the Projects-Button. This will forward you to the Projects-Overview.
+On the dashboard click on the **Projects** tab to see an overview of
+all projects in the organisation.
 
 ![](/assets/iam/projects/projects-overview.png)
 
-Om the Overview-Page you will find a default Project, which we created for you to get you jump started.
+You will see that Wavestack has already created a default project for
+you.
 
 ![](/assets/iam/projects/projects-default.png)
 
-Click on 'Create New Project' to create a new Project. This will open an overlay to create a new Project
+## Create a project
+
+To add a new projects, click on 'Create New Project'.
 
 ![](/assets/iam/projects/projects-new.png)
 
-After entering the Name of you new Project, click on the blue Continue-Button. You will be forwarded to the newly created Project
+After entering a suitable name for your new project, click on the blue
+**Continue** button to create it.
 
 ![](/assets/iam/projects/projects-new-create.png)
 
-Here you can check if all the necessary resources for roles are created. In the background there is a service running, which checks every 30 seconds on newly created resources and will synchronize them with [WKE][wvst-wke] and Openstack. Also it will create Roles required to access both services.
+## Manage roles
 
-In the Project-Overview click on roles to review them.
+Suitable roles will be automatically created for new projects, but it
+might take a couple of minutes for them to be synced to various
+systems.
 
-![](/assets/iam/projects/projects-new-roles.png)
+Default roles are listed in the table below.
 
-On the Project_role-Page you will see the following roles, as soon as the synchronization is done.
+| Role                    | Service                 | Permissions                                     |
+|-------------------------|-------------------------|-------------------------------------------------|
+| ga-admin                | [WKE][wvst-wke]         | **create**, **read**, **update** and **delete** |
+| ga-viewer               | [WKE][wvst-wke]         | **read**                                        |
+| os-creator              | [Barbican][os-barbican] | **create**, **read**, **update** and **delete** |
+| os-heat_stack_owner     | [Heat][os-heat]         | **create**, **read**, **update** and **delete** |
+| os-load-balancer_member | [Octavia][os-octavia]   | **create**, **read**, **update** and **delete** |
+| os-member               | [OpenStack (all)][os]   | **create**, **read**, **update** and **delete** |
+| os-reader               | [OpenStack (all)][os]   | **read**                                        |
 
-- ga-admin: User can access this Project in [WKE][wvst-wke] and see, create, update and delete Clusters
-- ga-viewer: User can access this Project in [WKE][wvst-wke] and see Clusters
-- os-creator:
-- os-heat_stack_owner:
-- os-load-balancer_member
-- os-member: User can access this Project in Openstack and see, create, update and delete Resources.
-- os-reader:
-  
+You can click on **Roles** to review them.
+
 ![](/assets/iam/projects/projects-new-roles-overview.png)
 
 <!-- References -->
 
-[wvst-wke]: /kubernetes 
+[os]: https://docs.openstack.org
+[os-barbican]: https://docs.openstack.org/barbican/latest
+[os-heat]: https://docs.openstack.org/heat/latest
+[os-octavia]: https://docs.openstack.org/octavia/latest
+[wvst-os]: https://dashboard.wavestack.de
+[wvst-wke]: https://dashboard.gardener.wavestack.cloud
