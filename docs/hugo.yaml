@@ -47,7 +47,7 @@ params:
   ui:
     breadcrumb_disable: false
     footer_about_disable: false
-    navbar_logo: false
+    navbar_logo: true
     navbar_translucent_over_cover_disable: false
     sidebar_menu_compact: false
     sidebar_menu_foldable: true
