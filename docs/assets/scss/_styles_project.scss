@@ -1,0 +1,94 @@
+// SPDX-License-Identifier: Apache-2.0
+// Copyright (C) 2023 Wavecon GmbH
+
+.td-sidebar, .td-sidebar-toc {
+    background-color: $dark;
+}
+
+.td-toc a {
+    color: $white!important;
+}
+
+.td-toc {
+    background: linear-gradient(112.4deg,rgba(0,255,140,.1) 13%,rgba(0,0,0,0) 100%),linear-gradient(72.04deg,rgba(0,255,140,.1) 0,rgba(19,35,59,.022) 46.74%,rgba(0,255,140,.1) 100%),rgba(0,255,140,.17)!important;
+    border-radius: $radius-l!important;
+    padding: $pad-l!important;
+}
+
+.td-sidebar__toggle {
+    color: $white;
+}
+
+.td-sidebar__toggle:hover {
+    color: $light-blue;
+}
+
+.td-toc a:hover {
+    color: $light-blue!important;
+}
+
+.td-sidebar-nav .td-sidebar-link.tree-root {
+    color: $white;
+}
+
+.td-sidebar-link {
+    color: $white!important;
+}
+
+.td-sidebar-link:hover {
+    color: $light-blue!important;
+}
+
+nav.foldable-nav label:before {
+    color: $white!important;
+}
+
+main {
+    background-color: $dark;
+    color: $white!important;
+}
+
+main a {
+    color: $blue!important;
+}
+
+main a:hover {
+    color: $light-blue!important;
+}
+
+.breadcrumb a {
+    color: $blue!important;
+}
+
+.breadcrumb-item.active {
+    color: $light-blue!important;
+}
+
+table, tr, td {
+    color: $white!important
+}
+
+.alert, pre {
+    background: linear-gradient(112.4deg,rgba(48,190,255,.1) 13%,rgba(0,0,0,0) 100%),linear-gradient(72.04deg,rgba(48,190,255,.1) 0,rgba(19,35,59,.022) 46.74%,rgba(48,190,255,.1) 100%),rgba(48,190,255,.17)!important;
+    border-radius: $radius-l;
+    border: none!important;
+}
+
+.td-content pre > code {
+    background: none!important;
+}
+
+.alert-heading {
+    color: $white!important;
+}
+
+.td-content .highlight pre {
+    background-color: $primary!important;
+    border: none!important;
+    border-width: 0!important;
+}
+
+.td-footer > * {
+    color: $white!important;
+    background-color: $primary!important;
+}
