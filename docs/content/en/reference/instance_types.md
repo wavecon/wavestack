@@ -9,9 +9,9 @@ weight: 1
 <!-- Copyright (C) 2023 Wavecon GmbH -->
 
 Every compute instance running in Wavestack has a specific type, or
-*flavour* in OpenStack parlance. The type defines various combinations
+*flavor* in OpenStack parlance. The type defines various combinations
 of instance attributes such as number of virtual CPU cores, amount of
-memory, network or storage capacity.
+memory, network or storage capacity and type.
 
 You can choose between a wide variety of instance types on Wavestack,
 which allows you to tailor your selection to your specific needs.
@@ -158,10 +158,19 @@ type.
 AI/ML optimised instances give you access to GPU resources and are
 well suited for high-performance computing workloads.
 
+We offer actually only one flavor, as we have a limitted amount of instances available to use.  
+For the moment, only one Nvidia Ampere A30 is in use which is splitted into four MiGs.  
+Each MiG has 6GB VideoRam available. 
+We will raise that offer in future. 
+ 
+|                       | vCPU | Memory | Disk | Disk Type | Average Bandwidth | Peak Bandwidth | VRam | 
+|-----------------------|------|--------|------|-----------|-------------------|----------------|------|
+| SCS-16V-64-500s-gXN-6 | 16   | 64     | 500  | ssd       | 2.5               | 10             | 6    |
+
 {{% alert color="info" %}}
 
 Please [get in touch with our support](../../support) if you
-require this type of instances. We are happy to set them up for you!
+require different sizes or a higher amount of gpu based Instances!
 
 {{% /alert %}}
 
