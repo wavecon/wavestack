@@ -17,7 +17,7 @@ You can choose between a wide variety of instance types on Wavestack,
 which allows you to tailor your selection to your specific needs.
 
 Execute the following command to list all currently available instance
-types/flavours:
+types/flavors:
 
 ```cli
 ❯ openstack flavor list
@@ -158,9 +158,7 @@ type.
 AI/ML optimised instances give you access to GPU resources and are
 well suited for high-performance computing workloads.
 
-We offer actually only one flavor, as we have a limitted amount of instances available to use.  
-For the moment, only one Nvidia Ampere A30 is in use which is splitted into four MiGs.  
-Each MiG has 6GB VideoRam available. 
+For the moment, only one Instance type with NVIDIA A30 Tensor Core GPUs is offered in the muc-a availability zone.  
 We will raise that offer in future. 
  
 |                       | vCPU | Memory | Disk | Disk Type | Average Bandwidth | Peak Bandwidth | VRam | 
@@ -170,7 +168,7 @@ We will raise that offer in future.
 {{% alert color="info" %}}
 
 Please [get in touch with our support](../../support) if you
-require different sizes or a higher amount of gpu based Instances!
+require different sizes or a higher amount of GPU based Instances!
 
 {{% /alert %}}
 
