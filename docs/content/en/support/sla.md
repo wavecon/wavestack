@@ -3,7 +3,7 @@ title: "Service Level Agreements"
 linkTitle: "SLAs"
 description: "Information on SLAs of Wavestack services."
 type: "docs"
-weight: 2
+weight: 3
 ---
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- Copyright (C) 2023 Wavecon GmbH -->
