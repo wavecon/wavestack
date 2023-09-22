@@ -158,10 +158,16 @@ type.
 AI/ML optimised instances give you access to GPU resources and are
 well suited for high-performance computing workloads.
 
+Instance types with NVIDIA A30 Tensor Core GPUs are currently only offered in the muc-a availability zone.
+
+|                         | vCPU | Memory | Disk | Disk Type | Average Bandwidth | Peak Bandwidth | VRam |
+|-------------------------|------|--------|------|-----------|-------------------|----------------|------|
+| SCS-16V-64-500s_GNa-14h | 16   | 64     | 500  | ssd       | 2.5               | 10             | 6    |
+
 {{% alert color="info" %}}
 
 Please [get in touch with our support](../../support) if you
-require this type of instances. We are happy to set them up for you!
+require differently sized GPU based instances!
 
 {{% /alert %}}
 
