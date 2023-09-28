@@ -73,6 +73,29 @@ parlance.
 
 ![](/assets/kubernetes/wke/gardener-db-create-cluster.png)
 
+{{% alert color="info" %}}
+
+Please note that application credentials for WKE are not automatically
+provisioned at this point.
+
+In order to be able to create clusters and other resources, you will
+have to create a suitable application credential and provide it to
+WKE.
+
+To do so, head over to:
+
+- https://dashboard.wavestack.de/identity/application_credentials/
+
+and create a new application credential.
+
+Once you've done that you can provide it to WKE by configuring an
+infrastructure secret on:
+
+- https://dashboard.gardener.wavestack.cloud/namespace/garden/secrets
+
+{{% /alert %}}
+
+
 ### Configuration
 
 The cluster configuration wizard allows you to tailor the cluster
