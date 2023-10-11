@@ -1,6 +1,6 @@
 ---
-title: "Openstack"
-linkTitle: "Openstack"
+title: "Storage"
+linkTitle: "Storage"
 type: "docs"
 weight: 1
 ---
