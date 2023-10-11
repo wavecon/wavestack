@@ -92,3 +92,15 @@ table, tr, td {
     color: $white!important;
     background-color: $primary!important;
 }
+
+.card, .td-content .highlight {
+    --bs-card-bg: #13233B!important;
+}
+
+.nav-link {
+    color: $white;
+}
+
+.nav-link:hover {
+    color: $light-blue;
+}
