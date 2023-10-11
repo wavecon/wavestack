@@ -1,6 +1,6 @@
 ---
-title: "Openstack Swift/RGW S3 API"
-linkTitle: "Openstack Swift/RGW S3 API"
+title: "Swift/RGW S3 API"
+linkTitle: "Swift/RGW S3 API"
 description: "Create object storage buckets/containers using Swift/Ceph-RGW S3 API"
 type: "docs"
 weight: 1
@@ -107,7 +107,7 @@ Download objects to your local machine like so:
 ❯ openstack object save <container> <object>
 ```
 
-If you wish to delete one or multiple object from your container 
+If you wish to delete one or multiple object from your container
 you can delete objects with the following command:
 
 ```cli
