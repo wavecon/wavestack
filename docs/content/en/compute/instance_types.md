@@ -130,7 +130,7 @@ Please note that local storage is ephemeral, which means that data
 stored on these volumes is lost if the instance is destroyed.
 
 Data will also not be migrated or evacuated when maintenance tasks are
-performed.
+performed. When maintenance tasks happend these instances will shutoff.
 
 Please ensure that your workloads can tolerate this behaviour when
 utilising instances with local storage or opt for a different instance
