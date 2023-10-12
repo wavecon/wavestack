@@ -2,7 +2,7 @@
 title: "Wavestack Support"
 linkTitle: "Support"
 type: "docs"
-weight: 2
+weight: 5
 ---
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- Copyright (C) 2023 Wavecon GmbH -->

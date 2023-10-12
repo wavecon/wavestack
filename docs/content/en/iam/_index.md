@@ -2,7 +2,7 @@
 title: "Identity and Access Management"
 linkTitle: "IAM"
 type: "docs"
-weight: 1
+weight: 3
 ---
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- Copyright (C) 2023 Wavecon GmbH -->
