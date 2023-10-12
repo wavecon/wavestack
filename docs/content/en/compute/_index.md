@@ -1,8 +1,8 @@
 ---
-title: "Reference"
-linkTitle: "Reference"
+title: "Compute"
+linkTitle: "Compute"
 type: "docs"
-weight: 2
+weight: 1
 ---
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- Copyright (C) 2023 Wavecon GmbH -->
