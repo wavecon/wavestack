@@ -45,7 +45,7 @@ Volumes are created by running the following openstackclient command:
 ```
 
 {{% alert color="info" %}}
-Omitting the name will create a volume with the same name as its UUID
+Omitting the name will create a volume with the same name as its UUID.
 {{% /alert %}}
 
 
