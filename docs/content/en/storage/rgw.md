@@ -132,7 +132,7 @@ at the same time by passing the `--recursive` flag.
 [awscli]: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 [keystone-rgw-auth]: https://docs.ceph.com/en/latest/radosgw/s3/authentication/#authentication-against-openstack-keystone
 [keystone-rgw-multitenancy]: https://docs.ceph.com/en/latest/radosgw/multitenancy/#swift-with-keystone
-[openstackclient-container]: https://docs.openstack.org/python-openstackclient/queens/cli/command-objects/container.html
+[openstackclient-container]: https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/container.html
 [openstackclient-ec2-credentials]: https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/ec2-credentials-v3.html
 [openstackclient-getting-started]: https://github.com/openstack/python-openstackclient#getting-started
 [openstackclient-object]: https://docs.openstack.org/python-openstackclient/latest/cli/command-objects/object.html
