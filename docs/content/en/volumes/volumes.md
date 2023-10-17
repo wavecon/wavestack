@@ -50,8 +50,7 @@ Omitting the name will create a volume with the same name as its UUID
 
 
 You can also add further parameters to the [cinder volume create
-command][cinder-volume-creation]. The following ones are commonly
-used:
+command][cinder-volume-creation]. The following ones are commonly used:
 
 - `--image` specifies which machine image to replicate the volume from
 - `--snapshot` specifies which volume snapshot to replicate the volume from
