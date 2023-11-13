@@ -31,14 +31,14 @@ As soon as the attestation has been issued, it will be published on this page.
 Learn more about
 C5 [here][bsi-c5-introduction].
 
-## Certificates of noris network GmbH
+## Certificates of noris network AG
 
-As 100% subsidiary of noris network GmbH, we benefit directly from all certificates held by noris
-network. This guarantees that our datacenter services from noris network GmbH are built on a solid foundation and meet
+As 100% subsidiary of noris network AG, we benefit directly from all certificates held by noris
+network. This guarantees that our datacenter services from noris network AG are built on a solid foundation and meet
 the highest industry standards. Through our Wavestack product, we can pass this security and confidence directly to our
 customers.
 
-Learn more about the certification of noris network GmbH [here][noris-company-certifications-en].
+Learn more about the certification of noris network AG [here][noris-company-certifications-en].
 
 <!-- References -->
 [assets-reference-ISO_IEC_27001_2017]: /assets/reference/ISO_IEC_27001_2017.pdf

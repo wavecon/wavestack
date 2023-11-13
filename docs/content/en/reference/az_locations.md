@@ -15,7 +15,7 @@ This document provides an introduction to assigning availability zones (AZs) to 
 Zones are isolated locations that are used to separate resources from each other to provide greater resilience and
 operational redundancy.
 
-In our configuration, we use three Availability Zones, each located in a different datacenter of the noris network GmbH
+In our configuration, we use three Availability Zones, each located in a different datacenter of the noris network AG
 datacenter campus Munich East. This configuration provides mutual operational redundancy so that if one zone fails, the
 other two can take over.
 
