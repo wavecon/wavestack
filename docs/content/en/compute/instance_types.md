@@ -1,11 +1,15 @@
 ---
+
 title: "Instance types"
 linkTitle: "Instance types"
 description: "Instance types on Wavestack"
 type: "docs"
 weight: 1
+
 ---
+
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
+
 <!-- Copyright (C) 2023 Wavecon GmbH -->
 
 Every compute instance running in Wavestack has a specific type, or
@@ -29,7 +33,6 @@ can read more about it in:
 
 - [SCS - Flavor Naming Standard v3][gh-scs-standards-v3-flavor-naming].
 
-
 ## General Purpose
 
 General purpose instances provide a balanced ratio of virtual CPU
@@ -44,7 +47,7 @@ Typical workloads:
 - Development and test environments
 
 |                  | vCPU | Memory | Disk | Disk Type | Average Bandwidth | Peak Bandwidth |
-|------------------|------|--------|------|-----------|-------------------|----------------|
+| ---------------- | ---- | ------ | ---- | --------- | ----------------- | -------------- |
 | SCS-2V-8         | 2    | 8      | 0    | rbd\_fast | 0.512             | 1              |
 | SCS-2V-8-20      | 2    | 8      | 20   | rbd\_fast | 0.512             | 1              |
 | SCS-4V-16        | 4    | 16     | 0    | rbd\_fast | 1.25              | 2.5            |
@@ -74,7 +77,7 @@ Typical workloads:
 - High-performance computing (HPC)
 
 |                 | vCPU | Memory | Disk | Disk Type | Average Bandwidth | Peak Bandwidth |
-|-----------------|------|--------|------|-----------|-------------------|----------------|
+| --------------- | ---- | ------ | ---- | --------- | ----------------- | -------------- |
 | SCS-8V-16-50    | 8    | 16     | 50   | rbd\_fast | 1.25              | 2.5            |
 | SCS-16V-32      | 8    | 16     | 0    | rbd\_fast | 2.5               | 5              |
 | SCS-16V-32-100  | 16   | 32     | 100  | rbd\_fast | 2.5               | 5              |
@@ -94,7 +97,7 @@ Typical workloads:
 - In-memory data stores (e.g. redis)
 
 |                  | vCPU | Memory | Disk | Disk Type | Average Bandwidth | Peak Bandwidth |
-|------------------|------|--------|------|-----------|-------------------|----------------|
+| ---------------- | ---- | ------ | ---- | --------- | ----------------- | -------------- |
 | SCS-1V-8         | 1    | 8      | 0    | rbd\_fast | 0.512             | 1              |
 | SCS-1V-8-20      | 1    | 8      | 20   | rbd\_fast | 0.512             | 1              |
 | SCS-2V-16        | 2    | 16     | 0    | rbd\_fast | 0.512             | 1              |
@@ -139,7 +142,7 @@ type.
 {{% /alert %}}
 
 |                   | vCPU | Memory | Disk | Disk Type | Average Bandwidth | Peak Bandwidth |
-|-------------------|------|--------|------|-----------|-------------------|----------------|
+| ----------------- | ---- | ------ | ---- | --------- | ----------------- | -------------- |
 | SCS-2V-8-20s      | 2    | 8      | 20   | ssd       | 1.25              | 2.5            |
 | SCS-4V-16-50s     | 4    | 16     | 50   | ssd       | 1.25              | 2.5            |
 | SCS-8V-32-100s    | 8    | 32     | 100  | ssd       | 2.5               | 5              |
@@ -161,7 +164,7 @@ well suited for high-performance computing workloads.
 Instance types with NVIDIA A30 Tensor Core GPUs are currently only offered in the muc-a availability zone.
 
 |                         | vCPU | Memory | Disk | Disk Type | Average Bandwidth | Peak Bandwidth | VRam |
-|-------------------------|------|--------|------|-----------|-------------------|----------------|------|
+| ----------------------- | ---- | ------ | ---- | --------- | ----------------- | -------------- | ---- |
 | SCS-16V-64-500s_GNa-14h | 16   | 64     | 500  | ssd       | 2.5               | 10             | 6    |
 
 {{% alert color="info" %}}
@@ -183,7 +186,7 @@ Typical workloads:
 - Development or test environments
 
 |          | vCPU | Memory | Disk | Disk Type | Average Bandwidth | Peak Bandwidth |
-|----------|------|--------|------|-----------|-------------------|----------------|
+| -------- | ---- | ------ | ---- | --------- | ----------------- | -------------- |
 | SCS-1L-1 | 1    | 1      | 0    | rbd\_fast | 0.512             | 1              |
 | SCS-1L0  | 1    | 1      | 5    | rbd\_fast | 0.512             | 1              |
 | SCS-1L1  | 2    | 1      | 0    | rbd\_fast | 0.512             | 1              |
@@ -194,6 +197,23 @@ Typical workloads:
 | SCS-1L6  | 8    | 4      | 20   | rbd\_fast | 1.25              | 2.5            |
 | SCS-1L7  | 16   | 8      | 0    | rbd\_fast | 1.25              | 2.5            |
 
+## 
+
+### Pricing with CPU-Shares
+
+In order to enable pricing that is as fair as possible, we have designed 
+“CPU shares”. This means we can also differentiate between the different
+ core types in pricing. Each CPU type corresponds to a certain amount of
+ shares. The amount of shares mentioned on the invoice corresponds to 
+the following table:
+
+
+
+| CPU-Type | amount of shares |
+| -------- | ---------------- |
+| **L**    | 1 CPU Shares     |
+| **V**    | 10 CPU Shares    |
+
 ## Notes
 
 ### Storage Types / IOPS
@@ -202,7 +222,7 @@ Performance attributes differ between storage/disk types, which are
 summarised in the table below:
 
 |           | Average IOPS | Burst IOPS | Average Throughput | Burst Throughput |
-|-----------|--------------|------------|--------------------|------------------|
+| --------- | ------------ | ---------- | ------------------ | ---------------- |
 | rdb\_fast | 1500         | 10000      | 0.25               | 0.5              |
 | ssd       | 10000        | 10000      | 0.75               | 0.75             |
 
@@ -211,7 +231,7 @@ summarised in the table below:
 Information in this document is provided in the following units:
 
 |                     |        |
-|---------------------|--------|
+| ------------------- | ------ |
 | **Memory**          | GiB    |
 | **Disk**            | GiB    |
 | **Bandwidth**       | Gbit/s |
