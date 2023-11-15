@@ -1,11 +1,15 @@
 ---
+
 title: "Instance types"
 linkTitle: "Instance types"
 description: "Instance types on Wavestack"
 type: "docs"
 weight: 1
+
 ---
+
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
+
 <!-- Copyright (C) 2023 Wavecon GmbH -->
 
 Every compute instance running in Wavestack has a specific type, or
