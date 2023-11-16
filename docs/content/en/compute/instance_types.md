@@ -197,7 +197,9 @@ Typical workloads:
 | SCS-1L6  | 8    | 4      | 20   | rbd\_fast | 1.25              | 2.5            |
 | SCS-1L7  | 16   | 8      | 0    | rbd\_fast | 1.25              | 2.5            |
 
-### Pricing with CPU-Shares
+## 
+
+## Pricing with CPU-Shares
 
 In order to enable pricing that is as fair as possible, we have designed 
 “CPU shares”. This means we can also differentiate between the different
@@ -209,6 +211,8 @@ the following table:
 | -------- | ---------------- |
 | **L**    | 1 CPU Shares     |
 | **V**    | 10 CPU Shares    |
+
+
 
 ## Notes
 
