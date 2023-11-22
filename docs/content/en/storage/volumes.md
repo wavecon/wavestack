@@ -48,6 +48,10 @@ Volumes are created by running the following openstackclient command:
 Omitting the name will create a volume with the same name as its UUID.
 {{% /alert %}}
 
+{{% alert color="info" %}}
+If you wish to prevent forensic recovery of your data you must use
+the encrypted volume type (LUKS) for volume creation.
+{{% /alert %}}
 
 You can also add further parameters to the [cinder volume create
 command][cinder-volume-creation]. The following ones are commonly used:
