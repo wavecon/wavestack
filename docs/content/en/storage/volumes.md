@@ -26,9 +26,11 @@ Currently, these types are:
 
 | Volume Type      | Description                                      |
 |------------------|--------------------------------------------------|
-| rbd\_fast        | General-Use Volume, backed by Ceph RBD           |
-| LUKS             | Like rbd\_fast, but automatically encrypted      |
+| rbd\_fast        | rbd_fast is our storage class for full flash block storage, based on Ceph RBD. It is a generally usable volume that is specially designed for applications with high input/output requirements. Thanks to the full flash architecture, it enables extremely fast data processing and has very low latencies. For data security and reliability, the data is replicated three times, providing high data redundancy.         |
+| LUKS             | Similar to rbd\_fast, but with automated encryption added on top for enhanced data security. |
 
+### Local SSD/NVMe Storage
+For quick and low-latency workloads, local SSD/NVMe backed storage is recommended. Choose an SCS-standard flavor with 'p' (NVMe) or 's' (SSD) at the end of its name. For example, SCS-2V-8-20**s** signifies 20GB local SSD storage. Be aware that local storage is ephemeral, meaning data gets lost if the instance is deleted. Information on the instances offered can be found here: [Instance types](../compute/instance_types)
 
 ## Managing volumes
 
@@ -82,7 +84,7 @@ delete][cinder-volume-deletion]:
 ❯ openstack delete volume <volume>
 ```
 
-to delete the volume. you can also add the `--purge` parameter
+To delete the volume. You can also add the `--purge` parameter
 to the command to delete all snapshots of the volume.
 
 #### Extending a volume
@@ -125,7 +127,7 @@ the `--force` flag to the command.
 
 #### Creating/deleting volume backup
 
-Volumes as well as volume snapshots can be backed up by utilising the
+Volumes as well as volume snapshots can be backed up by utilizing the
 capabilities of the Cinder-Backup Service. Cinder-Backup saves backups
 to a pool inside another storage cluster which spans over all 3
 availability zones. This way Wavestack ensures backup data high
@@ -145,11 +147,11 @@ For further information on backup options view the [OpenStack
 Docs][cinder-volume-backup].
 
 
-## Transfering a volume
+## Transferring a volume
 
 It is also possible to [transfer your volumes][cinder-volume-transfer] between
 projects, which allows the user to copy and share data between subprojects
-within their own organisation.
+within their own organization.
 
 First, a volume transfer request is created:
 
