@@ -58,12 +58,19 @@ resources.
 The Wavestack object store is built using Ceph and distributed across
 three availability zones, namely muc5-a, muc5-b and muc5-d. Object
 data is thus redundantly replicated across all 3 AZs.
+For example, one URL is rgw.muc5.wavestack.de.
 
 Your buckets (or containers) are bound to your OpenStack project via
 [Keystone RGW Tenants][keystone-rgw-multitenancy].
 
-You can access the Wavestack object store with either the openstackclient,
+You can access the Wavestack object store with either the `openstackclient`,
 or an S3 API-compatible tool.
+
+For more detailed information on how to use the S3 API with Ceph,
+please refer to the official Ceph documentation on S3 API compatibility
+at [Ceph S3 Documentation](https://docs.ceph.com/en/latest/radosgw/s3/).
+This includes instructions on how to use advanced features such as Object Lock,
+which can be crucial for implementing compliance and data retention policies.
 
 ### EC2 Credentials
 
