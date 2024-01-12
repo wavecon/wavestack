@@ -1,15 +1,11 @@
 ---
-
 title: "Instance types"
 linkTitle: "Instance types"
 description: "Instance types on Wavestack"
 type: "docs"
 weight: 1
-
 ---
-
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
-
 <!-- Copyright (C) 2023 Wavecon GmbH -->
 
 Every compute instance running in Wavestack has a specific type, or
@@ -197,7 +193,6 @@ Typical workloads:
 | SCS-1L6  | 8    | 4      | 20   | rbd\_fast | 1.25              | 2.5            |
 | SCS-1L7  | 16   | 8      | 0    | rbd\_fast | 1.25              | 2.5            |
 
-## 
 
 ## Pricing with CPU-Shares
 
@@ -211,7 +206,6 @@ the following table:
 | -------- | ---------------- |
 | **L**    | 1 CPU Shares     |
 | **V**    | 10 CPU Shares    |
-
 
 
 ## Notes
