@@ -58,7 +58,7 @@ resources.
 The Wavestack object store is built using Ceph and distributed across
 three availability zones, namely muc5-a, muc5-b and muc5-d. Object
 data is thus redundantly replicated across all 3 AZs.
-For example `rgw.muc5.wavestack.de`.
+The endpoint for the MUC5 RGW is `rgw.muc5.wavestack.de`.
 
 Your buckets (or containers) are bound to your OpenStack project via
 [Keystone RGW Tenants][keystone-rgw-multitenancy].
