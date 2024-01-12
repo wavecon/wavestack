@@ -1,45 +1,41 @@
 ---
-title: "Release"
+title: "Releases"
 linkTitle: "Releases"
 description: "Information on upgrades and maintenance procedures for Wavestack services."
 type: "docs"
-weight: 1
-
+weight: 2
 ---
-
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
-
 <!-- Copyright (C) 2023 Wavecon GmbH -->
 
 #### Release Notes Wavestack 2023.11 - Antelope - SCS R5
 
-###### Announcement  26.10.2023
+###### Announcement 26.10.2023
 
-From Monday 23.10.2023 to Wednesday 25.10.2023 we upgraded wavestack to SCS  Release 5.
+From Monday 23.10.2023 to Wednesday 25.10.2023 we upgraded Wavestack to SCS Release 5.
 
-Our upgrade included OSISM 6.0.0 and OpenStack Antelope 2023.1. This upgrade shipped several OpenStack-based changes for further reliability as well as core
- fixes and improvements as they came up on OpenDev in the last few 
-month. 
+Our upgrade included OSISM 6.0.0 and OpenStack Antelope 2023.1. This upgrade shipped 
+several OpenStack-based changes for further reliability as well as core fixes and
+improvements as they came up on OpenDev in the last few months. 
 
 + `Features`
   
   + Designate
-    
-    zones can now be shared with other projects, allowing them to create and
-    manage recordsets and records in the zone.
-  - many Improvements done by upstream work
+    Zones can now be shared with other projects, allowing them to create and
+    manage recordsets and records in the shared zone.
+
+  + Many improvements done by upstream work
 
 + `Fixes` 
   
-  + CVE-2023-4623,  CVE-2023-4244, CVE-2023-20569 and many much more ...
+  + CVE-2023-4623,  CVE-2023-4244, CVE-2023-20569 and many more ...
   
-  + AMD EPYC Live Migration Issue fixed by  Ubuntu LP: 2032164 linux  with last
-    
+  + AMD EPYC Live Migration Issue fixed by  Ubuntu LP: 2032164 linux with last
     Ubuntu Linux Kernel
 
 + `Obsolete`
   
-   _ member  _  role not supported anymore 
+   _member_ role not supported anymore
 
 + `Notice` OpenStack 2023.1 will maintain until 2024-09-22
 
