@@ -30,7 +30,7 @@ Currently, these types are:
 | LUKS             | Similar to rbd\_fast, but with automated encryption added on top for enhanced data security. |
 
 ### Local SSD/NVMe Storage
-For quick and low-latency workloads, local SSD/NVMe backed storage is recommended. Choose an SCS-standard flavor with 'p' (NVMe) or 's' (SSD) at the end of its name. For example, SCS-2V-8-20**s** signifies 20GB local SSD storage. Be aware that local storage is ephemeral, meaning data gets lost if the instance is deleted. Information on the instances offered can be found here: [Instance types](../compute/instance_types)
+For quick and low-latency workloads, local SSD/NVMe backed storage is recommended. Choose an SCS-standard flavor with 'p' (NVMe) or 's' (SSD) at the end of its name. For example, SCS-2V-8-20**s** signifies 20GB local SSD storage. Be aware that local storage is ephemeral, meaning data gets lost if the instance is deleted. Information on the instances offered can be found here: [Instance types](/compute/instance_types)
 
 ## Managing volumes
 
