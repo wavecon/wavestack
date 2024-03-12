@@ -36,17 +36,25 @@ respective system for the user was available as intended.
 The system availability refers to the respective monthly
 average after deduction of the following:
 
-   1. Downtime during announced maintenance windows
-   1. Denial of Service (DoS) attacks
-   1. Malfunctions / failures due to force majeure
-   1. Recovery times
-   1. Time between the occurrence of the unavailability and the
-      receipt of the fault report
-   1. Regulatory interventions
-   1. Unavailability caused by the user, either consciously or
-      unconsciously
-   1. Unavailability that could have been remedied independently by
-      the user
+1. Downtime during announced maintenance windows
+1. Denial of Service (DoS) attacks
+1. Malfunctions / failures due to force majeure
+1. Recovery times
+1. Time between the occurrence of the unavailability and the
+   receipt of the fault report
+1. Regulatory interventions
+1. Unavailability caused by the user, either consciously or
+   unconsciously
+1. Unavailability that could have been remedied independently by
+   the user
+
+{{% alert color="warning" %}}
+**Exclusion of certain services:**
+
+Please note that our standard cloud service offerings do not include any data backup services. However, we understand
+the importance of data protection for business continuity. If you need a solution, please do not hesitate to contact our
+customer support. We will be happy to discuss and develop a solution to meet your specific requirements.
+{{% /alert %}}
 
 ## Service level penalties
 
