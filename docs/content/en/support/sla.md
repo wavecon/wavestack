@@ -28,6 +28,16 @@ procedures:
 | RGW Objectstore                | 99.925%             |
 | WKE (Waveon Kubernetes Engine) | None (tech preview) |
 
+{{% alert color="info" %}}
+**Notes:**
+
+- **Compute instances (regional)**: This availability rate ensures that you can create or use compute instances in one
+  of the availability zones within the region. You have the flexibility to choose from any available availability
+  zone within that region, offering you resilience and redundancy.
+- **Compute instances (zonal)**: Unlike regional instances, which offer availability across multiple zones, zonal
+  instances are confined to a single availability zone. This is reflected in a lower availability guarantee.
+  {{% /alert %}}
+
 ## Service level criteria
 
 The system availability is the measure of the time at which the
