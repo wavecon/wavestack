@@ -14,4 +14,4 @@ weight: 2
 We are currently not experiencing any known issues with our services.
 Our team is continuously monitoring and ensuring that everything functions
 smoothly. Should you encounter any problems or require assistance,
-please do not hesitate to [contact our support](_index.md). 
+please do not hesitate to [contact our support](/support/). 
