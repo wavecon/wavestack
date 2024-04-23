@@ -6,23 +6,12 @@ type: "docs"
 weight: 2
 ---
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
-<!-- Copyright (C) 2023 Wavecon GmbH -->
+<!-- Copyright (C) 2024 Wavecon GmbH -->
 
-## RGW Objectstore
+## No Known Issues at Present
 
-### Unable to create buckets
+We are currently not experiencing any known issues with our services.
+Our team is continuously monitoring and ensuring that everything 
+functions smoothly. Should you encounter any problems or require assistance, 
+please do not hesitate to [contact our support](/support/).
 
-#### Details
-
-An upgrade on our RGW clusters introduced a regression that made it
-impossible to create buckets using the web frontend.
-
-The underlying issue is a bug in Ceph RGW, in that a necessary string
-for "storage policy" is empty. We reported it at:
-
-- https://tracker.ceph.com/issues/62771
-
-#### Workaround
-
-Bucket creation is still possible using the command line interface,
-which is not affected.
