@@ -20,13 +20,13 @@ procedures:
 
 ## SLAs
 
-| Service                        | Availability        |
-|--------------------------------|---------------------|
-| Compute instances (regional)   | 99.95%              |
-| Compute instances (zonal)      | 99.5%               |
-| OpenStack API                  | 99.9%               |
-| RGW Objectstore                | 99.925%             |
-| WKE (Waveon Kubernetes Engine) | None (tech preview) |
+| Service                           | Availability        |
+|-----------------------------------|---------------------|
+| Compute instances (regional)      | 99.95%              |
+| Compute instances (zonal)         | 99.5%               |
+| OpenStack API                     | 99.9%               |
+| RGW Objectstore                   | 99.925%             |
+| WKE (Wavestack Kubernetes Engine) | None (tech preview) |
 
 {{% alert color="info" %}}
 **Notes:**
