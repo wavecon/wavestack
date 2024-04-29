@@ -7,7 +7,7 @@
   command = "make build"
 
 [build.environment]
-  HUGO_VERSION = "0.111.3"
+  HUGO_VERSION = "0.124.1"
   NODE_VERSION = "20"
   GO_VERSION = "1.20"
 
