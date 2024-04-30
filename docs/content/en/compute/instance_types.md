@@ -124,7 +124,7 @@ Typical workloads:
 - Key-value stores (e.g. etcd)
 - Kubernetes controlplane nodes
 
-{{% alert color="warning" %}}
+{{% alert color="danger" %}}
 
 Please note that local storage is ephemeral, which means that data
 stored on these volumes is lost if the instance is destroyed.
@@ -164,7 +164,7 @@ Instance types with NVIDIA A30 Tensor Core GPUs are currently only offered in th
 |-------------------------|------|--------|------|-----------|-------------------|----------------|------|
 | SCS-16V-64-500s_GNa-14h | 16   | 64     | 500  | ssd       | 2.5               | 10             | 6    |
 
-{{% alert color="info" %}}
+{{% alert color="success" %}}
 
 Please [get in touch with our support](../../support) if you
 require differently sized GPU based instances!
