@@ -68,10 +68,22 @@ table, tr, td {
     color: $white!important
 }
 
-.alert, pre {
-    background: linear-gradient(112.4deg,rgba(48,190,255,.1) 13%,rgba(0,0,0,0) 100%),linear-gradient(72.04deg,rgba(48,190,255,.1) 0,rgba(19,35,59,.022) 46.74%,rgba(48,190,255,.1) 100%),rgba(48,190,255,.17)!important;
-    border-radius: $radius-l;
-    border: none!important;
+.alert, .alert.alert-info, pre {
+  background: linear-gradient(112.4deg,rgba(48,190,255,.1) 13%,rgba(0,0,0,0) 100%),linear-gradient(72.04deg,rgba(48,190,255,.1) 0,rgba(19,35,59,.022) 46.74%,rgba(48,190,255,.1) 100%),rgba(48,190,255,.17)!important;
+  border-radius: $radius-l;
+  border: none!important;
+}
+
+.alert.alert-warning {
+  background: linear-gradient(112.4deg, rgba(255, 235, 59, .1) 13%, rgba(0, 0, 0, 0) 100%), linear-gradient(72.04deg, rgba(255, 235, 59, .1) 0, rgba(59, 55, 19, .022) 46.74%, rgba(255, 235, 59, .1) 100%), rgba(255, 235, 59, .17) !important;
+}
+
+.alert.alert-danger, .alert.alert-error {
+  background: linear-gradient(112.4deg, rgba(255, 59, 59, .1) 13%, rgba(0, 0, 0, 0) 100%), linear-gradient(72.04deg, rgba(255, 59, 59, .1) 0, rgba(59, 19, 19, .022) 46.74%, rgba(255, 59, 59, .1) 100%), rgba(255, 59, 59, .17) !important;
+}
+
+.alert.alert-success {
+  background: linear-gradient(112.4deg, rgba(0, 255, 140, .1) 13%, rgba(0, 0, 0, 0) 100%), linear-gradient(72.04deg, rgba(0, 255, 140, .1) 0, rgba(19, 35, 59, .022) 46.74%, rgba(0, 255, 140, .1) 100%), rgba(0, 255, 140, .17) !important;
 }
 
 .td-content pre > code {

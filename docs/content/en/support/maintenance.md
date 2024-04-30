@@ -28,7 +28,7 @@ unforeseen negative impact. If applicable, we will roll out changes
 separately in individual zones, which ensures the availability of at
 least two zones at any given point in time.
 
-{{% alert color="warning" %}}
+{{% alert color="danger" %}}
 Please note that urgent security-upgrades may be performed outwith
 these maintenance windows.
 {{% /alert %}}
