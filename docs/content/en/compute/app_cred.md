@@ -8,7 +8,7 @@ description: >
 
 ## Advanced Role and Permission Concept
 
-Application Credentials are a powerful way to define and assign roles flexibly and granularly in Wavestack. This guide
+[Application Credentials](https://docs.openstack.org/keystone/latest/user/application_credentials.html) are a powerful way to define and assign roles flexibly and granularly in Wavestack. This guide
 will walk you through creating and configuring these credentials to manage virtual machines (VMs), images, and networks
 effectively.
 
@@ -31,51 +31,440 @@ effectively.
 1. **Access Rules:** Define the access rules in JSON or YAML format for more fine-grained control. Below are examples
    for managing VM states, images, and networks.
 
+1. **Unrestricted:** By default, for security reasons, application credentials are forbidden from being used for creating
+  additional application credentials or keystone trusts. If your application credential needs to be able to perform
+  these actions, check `Unrestricted`. However, this is generally not recommended for security purposes.
+
 ### Example Configuration for VM Management
 
 ```json
-// TODO
+[
+    {
+        "path": "/v2.1/servers",
+        "method": "GET",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/detail",
+        "method": "GET",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers",
+        "method": "POST",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}",
+        "method": "GET",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}",
+        "method": "PUT",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}",
+        "method": "DELETE",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}/action",
+        "method": "POST",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}/remote-consoles",
+        "method": "POST",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/os-console-auth-tokens/{console_token}",
+        "method": "GET",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}/diagnostics",
+        "method": "GET",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}/ips",
+        "method": "GET",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}/ips/{network_label}",
+        "method": "GET",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}/os-volume_attachments",
+        "method": "GET",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}/os-volume_attachments",
+        "method": "POST",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}/os-volume_attachments/{volume_id}",
+        "method": "GET",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}/os-volume_attachments/{volume_id}",
+        "method": "PUT",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}/os-volume_attachments/{volume_id}",
+        "method": "DELETE",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/flavors",
+        "method": "GET",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/flavors/detail",
+        "method": "GET",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/flavors/{flavor_id}",
+        "method": "GET",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/os-keypairs",
+        "method": "GET",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/os-keypairs",
+        "method": "POST",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/os-keypairs/{keypair_name}",
+        "method": "GET",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/os-keypairs/{keypair_name}",
+        "method": "DELETE",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}/tags",
+        "method": "GET",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}/tags",
+        "method": "PUT",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}/tags",
+        "method": "DELETE",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}/tags/{tag}",
+        "method": "GET",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}/tags/{tag}",
+        "method": "PUT",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}/tags/{tag}",
+        "method": "DELETE",
+        "service": "compute"
+    }
+]
 ```
 
 ### Example Configuration for Image Management
 
 ```json
-// TODO
+[
+    {
+        "path": "/v2/images",
+        "method": "POST",
+        "service": "image"
+    },
+    {
+        "path": "/v2/images",
+        "method": "GET",
+        "service": "image"
+    },
+    {
+        "path": "/v2/images/{image_id}",
+        "method": "GET",
+        "service": "image"
+    },
+    {
+        "path": "/v2/images/{image_id}",
+        "method": "PATCH",
+        "service": "image"
+    },
+    {
+        "path": "/v2/images/{image_id}",
+        "method": "DELETE",
+        "service": "image"
+    },
+    {
+        "path": "/v2/images/{image_id}/actions/deactivate",
+        "method": "POST",
+        "service": "image"
+    },
+    {
+        "path": "/v2/images/{image_id}/actions/reactivate",
+        "method": "POST",
+        "service": "image"
+    },
+    {
+        "path": "/v2/images/{image_id}/file",
+        "method": "PUT",
+        "service": "image"
+    },
+    {
+        "path": "/v2/images/{image_id}/file",
+        "method": "GET",
+        "service": "image"
+    },
+    {
+        "path": "/v2/images/{image_id}/members",
+        "method": "POST",
+        "service": "image"
+    },
+    {
+        "path": "/v2/images/{image_id}/members",
+        "method": "GET",
+        "service": "image"
+    },
+    {
+        "path": "/v2/images/{image_id}/members/{member_id}",
+        "method": "GET",
+        "service": "image"
+    },
+    {
+        "path": "/v2/images/{image_id}/members/{member_id}",
+        "method": "PUT",
+        "service": "image"
+    },
+    {
+        "path": "/v2/images/{image_id}/members/{member_id}",
+        "method": "DELETE",
+        "service": "image"
+    },
+    {
+        "path": "/v2/images/{image_id}/tags/{tag}",
+        "method": "PUT",
+        "service": "image"
+    },
+    {
+        "path": "/v2/images/{image_id}/tags/{tag}",
+        "method": "DELETE",
+        "service": "image"
+    }
+]
 ```
 
 ### Example Configuration for Network Management
 
 ```json
-// TODO
+[
+    {
+        "path": "/v2.0/networks",
+        "method": "GET",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/networks",
+        "method": "POST",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/networks/{network_id}",
+        "method": "GET",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/networks/{network_id}",
+        "method": "PUT",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/networks/{network_id}",
+        "method": "DELETE",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/subnets",
+        "method": "GET",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/subnets",
+        "method": "POST",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/subnets/{subnet_id}",
+        "method": "GET",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/subnets/{subnet_id}",
+        "method": "PUT",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/subnets/{subnet_id}",
+        "method": "DELETE",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/security-group-rules",
+        "method": "GET",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/security-group-rules",
+        "method": "POST",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/security-group-rules/{security_group_rule_id}",
+        "method": "GET",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/security-group-rules/{security_group_rule_id}",
+        "method": "DELETE",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/security-groups",
+        "method": "GET",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/security-groups",
+        "method": "POST",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/security-groups/{security_group_id}",
+        "method": "GET",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/security-groups/{security_group_id}",
+        "method": "PUT",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/security-groups/{security_group_id}",
+        "method": "DELETE",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/routers",
+        "method": "GET",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/routers",
+        "method": "POST",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/routers/{router_id}",
+        "method": "GET",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/routers/{router_id}",
+        "method": "PUT",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/routers/{router_id}",
+        "method": "DELETE",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/routers/{router_id}/add_router_interface",
+        "method": "PUT",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/routers/{router_id}/remove_router_interface",
+        "method": "PUT",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/routers/{router_id}/add_extraroutes",
+        "method": "PUT",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/routers/{router_id}/remove_extraroutes",
+        "method": "PUT",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/routers/{router_id}/add_external_gateways",
+        "method": "PUT",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/routers/{router_id}/update_external_gateways",
+        "method": "PUT",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/routers/{router_id}/remove_external_gateways",
+        "method": "PUT",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/floatingips",
+        "method": "GET",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/floatingips",
+        "method": "POST",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/floatingips/{floatingip_id}",
+        "method": "GET",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/floatingips/{floatingip_id}",
+        "method": "PUT",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/floatingips/{floatingip_id}",
+        "method": "DELETE",
+        "service": "network"
+    }
+]
 ```
-
-### YAML Format for Access Rules
-
-If you prefer using YAML format, here are the same rules:
-
-#### VM Management
-
-```yaml
-# TODO
-```
-
-#### Image Management
-
-```yaml
-# TODO
-```
-
-#### Network Management
-
-```yaml
-# TODO
-```
-
-### Unrestricted Access
-
-- **Unrestricted:** By default, for security reasons, application credentials are forbidden from being used for creating
-  additional application credentials or keystone trusts. If your application credential needs to be able to perform
-  these actions, check `Unrestricted`. However, this is generally not recommended for security purposes.
 
 ### Comprehensive Example
 
@@ -89,19 +478,423 @@ Here is a comprehensive configuration that includes VM management, image managem
 - **Access Rules:**
 
 ```json
-// TODO
-```
-
-Or in YAML format:
-
-```yaml
-# TODO
+[
+    {
+        "path": "/v2.1/servers",
+        "method": "GET",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/detail",
+        "method": "GET",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers",
+        "method": "POST",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}",
+        "method": "GET",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}",
+        "method": "PUT",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}",
+        "method": "DELETE",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}/action",
+        "method": "POST",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}/remote-consoles",
+        "method": "POST",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/os-console-auth-tokens/{console_token}",
+        "method": "GET",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}/diagnostics",
+        "method": "GET",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}/ips",
+        "method": "GET",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}/ips/{network_label}",
+        "method": "GET",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}/os-volume_attachments",
+        "method": "GET",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}/os-volume_attachments",
+        "method": "POST",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}/os-volume_attachments/{volume_id}",
+        "method": "GET",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}/os-volume_attachments/{volume_id}",
+        "method": "PUT",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}/os-volume_attachments/{volume_id}",
+        "method": "DELETE",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/flavors",
+        "method": "GET",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/flavors/detail",
+        "method": "GET",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/flavors/{flavor_id}",
+        "method": "GET",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/os-keypairs",
+        "method": "GET",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/os-keypairs",
+        "method": "POST",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/os-keypairs/{keypair_name}",
+        "method": "GET",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/os-keypairs/{keypair_name}",
+        "method": "DELETE",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}/tags",
+        "method": "GET",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}/tags",
+        "method": "PUT",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}/tags",
+        "method": "DELETE",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}/tags/{tag}",
+        "method": "GET",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}/tags/{tag}",
+        "method": "PUT",
+        "service": "compute"
+    },
+    {
+        "path": "/v2.1/servers/{server_id}/tags/{tag}",
+        "method": "DELETE",
+        "service": "compute"
+    },
+    {
+        "path": "/v2/images",
+        "method": "POST",
+        "service": "image"
+    },
+    {
+        "path": "/v2/images",
+        "method": "GET",
+        "service": "image"
+    },
+    {
+        "path": "/v2/images/{image_id}",
+        "method": "GET",
+        "service": "image"
+    },
+    {
+        "path": "/v2/images/{image_id}",
+        "method": "PATCH",
+        "service": "image"
+    },
+    {
+        "path": "/v2/images/{image_id}",
+        "method": "DELETE",
+        "service": "image"
+    },
+    {
+        "path": "/v2/images/{image_id}/actions/deactivate",
+        "method": "POST",
+        "service": "image"
+    },
+    {
+        "path": "/v2/images/{image_id}/actions/reactivate",
+        "method": "POST",
+        "service": "image"
+    },
+    {
+        "path": "/v2/images/{image_id}/file",
+        "method": "PUT",
+        "service": "image"
+    },
+    {
+        "path": "/v2/images/{image_id}/file",
+        "method": "GET",
+        "service": "image"
+    },
+    {
+        "path": "/v2/images/{image_id}/members",
+        "method": "POST",
+        "service": "image"
+    },
+    {
+        "path": "/v2/images/{image_id}/members",
+        "method": "GET",
+        "service": "image"
+    },
+    {
+        "path": "/v2/images/{image_id}/members/{member_id}",
+        "method": "GET",
+        "service": "image"
+    },
+    {
+        "path": "/v2/images/{image_id}/members/{member_id}",
+        "method": "PUT",
+        "service": "image"
+    },
+    {
+        "path": "/v2/images/{image_id}/members/{member_id}",
+        "method": "DELETE",
+        "service": "image"
+    },
+    {
+        "path": "/v2/images/{image_id}/tags/{tag}",
+        "method": "PUT",
+        "service": "image"
+    },
+    {
+        "path": "/v2/images/{image_id}/tags/{tag}",
+        "method": "DELETE",
+        "service": "image"
+    },
+    {
+        "path": "/v2.0/networks",
+        "method": "GET",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/networks",
+        "method": "POST",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/networks/{network_id}",
+        "method": "GET",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/networks/{network_id}",
+        "method": "PUT",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/networks/{network_id}",
+        "method": "DELETE",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/subnets",
+        "method": "GET",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/subnets",
+        "method": "POST",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/subnets/{subnet_id}",
+        "method": "GET",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/subnets/{subnet_id}",
+        "method": "PUT",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/subnets/{subnet_id}",
+        "method": "DELETE",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/security-group-rules",
+        "method": "GET",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/security-group-rules",
+        "method": "POST",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/security-group-rules/{security_group_rule_id}",
+        "method": "GET",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/security-group-rules/{security_group_rule_id}",
+        "method": "DELETE",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/security-groups",
+        "method": "GET",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/security-groups",
+        "method": "POST",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/security-groups/{security_group_id}",
+        "method": "GET",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/security-groups/{security_group_id}",
+        "method": "PUT",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/security-groups/{security_group_id}",
+        "method": "DELETE",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/routers",
+        "method": "GET",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/routers",
+        "method": "POST",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/routers/{router_id}",
+        "method": "GET",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/routers/{router_id}",
+        "method": "PUT",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/routers/{router_id}",
+        "method": "DELETE",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/routers/{router_id}/add_router_interface",
+        "method": "PUT",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/routers/{router_id}/remove_router_interface",
+        "method": "PUT",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/routers/{router_id}/add_extraroutes",
+        "method": "PUT",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/routers/{router_id}/remove_extraroutes",
+        "method": "PUT",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/routers/{router_id}/add_external_gateways",
+        "method": "PUT",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/routers/{router_id}/update_external_gateways",
+        "method": "PUT",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/routers/{router_id}/remove_external_gateways",
+        "method": "PUT",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/floatingips",
+        "method": "GET",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/floatingips",
+        "method": "POST",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/floatingips/{floatingip_id}",
+        "method": "GET",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/floatingips/{floatingip_id}",
+        "method": "PUT",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/floatingips/{floatingip_id}",
+        "method": "DELETE",
+        "service": "network"
+    }
+]
 ```
 
 ### Additional Information
 
-For more information, visit
-the [OpenStack Application Credentials documentation](https://docs.openstack.org/keystone/latest/user/application_credentials.html).
+For more information, visit the [OpenStack Application Credentials documentation](https://docs.openstack.org/keystone/latest/user/application_credentials.html).
 
 [Compute Service API](https://docs.openstack.org/api-ref/compute/index.html)
 
