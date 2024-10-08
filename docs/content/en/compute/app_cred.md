@@ -25,8 +25,7 @@ effectively.
 
 1. **Expiration Date/Time:** Optionally set an expiration date and time. Without these, the credential will not expire.
 
-1. **Roles:** Select the relevant [role(s)](https://docs.openstack.org/keystone/latest/admin/service-api-protection.html) necessary for managing the resources. Typically, roles
-   like `admin`, `image_admin`, or `network_admin` are used.
+1. **Roles:** Select the relevant [role(s)](https://docs.openstack.org/keystone/latest/admin/service-api-protection.html) necessary for managing the resources. Typically, roles like `admin`, `image_admin`, or `network_admin` are used.
 
 1. **Access Rules:** Define the access rules in JSON or YAML format for more fine-grained control. Below are examples
    for managing VM states, images, and networks.
@@ -80,48 +79,18 @@ effectively.
         "service": "compute"
     },
     {
-        "path": "/v2.1/os-console-auth-tokens/{console_token}",
-        "method": "GET",
-        "service": "compute"
-    },
-    {
         "path": "/v2.1/servers/{server_id}/diagnostics",
         "method": "GET",
         "service": "compute"
     },
     {
-        "path": "/v2.1/servers/{server_id}/ips",
-        "method": "GET",
-        "service": "compute"
-    },
-    {
-        "path": "/v2.1/servers/{server_id}/ips/{network_label}",
-        "method": "GET",
-        "service": "compute"
-    },
-    {
         "path": "/v2.1/servers/{server_id}/os-volume_attachments",
         "method": "GET",
         "service": "compute"
     },
     {
-        "path": "/v2.1/servers/{server_id}/os-volume_attachments",
-        "method": "POST",
-        "service": "compute"
-    },
-    {
         "path": "/v2.1/servers/{server_id}/os-volume_attachments/{volume_id}",
         "method": "GET",
-        "service": "compute"
-    },
-    {
-        "path": "/v2.1/servers/{server_id}/os-volume_attachments/{volume_id}",
-        "method": "PUT",
-        "service": "compute"
-    },
-    {
-        "path": "/v2.1/servers/{server_id}/os-volume_attachments/{volume_id}",
-        "method": "DELETE",
         "service": "compute"
     },
     {
@@ -156,36 +125,6 @@ effectively.
     },
     {
         "path": "/v2.1/os-keypairs/{keypair_name}",
-        "method": "DELETE",
-        "service": "compute"
-    },
-    {
-        "path": "/v2.1/servers/{server_id}/tags",
-        "method": "GET",
-        "service": "compute"
-    },
-    {
-        "path": "/v2.1/servers/{server_id}/tags",
-        "method": "PUT",
-        "service": "compute"
-    },
-    {
-        "path": "/v2.1/servers/{server_id}/tags",
-        "method": "DELETE",
-        "service": "compute"
-    },
-    {
-        "path": "/v2.1/servers/{server_id}/tags/{tag}",
-        "method": "GET",
-        "service": "compute"
-    },
-    {
-        "path": "/v2.1/servers/{server_id}/tags/{tag}",
-        "method": "PUT",
-        "service": "compute"
-    },
-    {
-        "path": "/v2.1/servers/{server_id}/tags/{tag}",
         "method": "DELETE",
         "service": "compute"
     }
@@ -379,6 +318,41 @@ effectively.
         "service": "network"
     },
     {
+        "path": "/v2.0/ports/{port_id}",
+        "method": "GET",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/ports/{port_id}",
+        "method": "PUT",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/ports/{port_id}",
+        "method": "DELETE",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/ports",
+        "method": "GET",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/ports",
+        "method": "POST",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/ports/{port_id}/add_allowed_address_pairs",
+        "method": "PUT",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/ports/{port_id}/remove_allowed_address_pairs",
+        "method": "PUT",
+        "service": "network"
+    },
+    {
         "path": "/v2.0/routers",
         "method": "GET",
         "service": "network"
@@ -520,48 +494,18 @@ Here is a comprehensive configuration that includes VM management, image managem
         "service": "compute"
     },
     {
-        "path": "/v2.1/os-console-auth-tokens/{console_token}",
-        "method": "GET",
-        "service": "compute"
-    },
-    {
         "path": "/v2.1/servers/{server_id}/diagnostics",
         "method": "GET",
         "service": "compute"
     },
     {
-        "path": "/v2.1/servers/{server_id}/ips",
-        "method": "GET",
-        "service": "compute"
-    },
-    {
-        "path": "/v2.1/servers/{server_id}/ips/{network_label}",
-        "method": "GET",
-        "service": "compute"
-    },
-    {
         "path": "/v2.1/servers/{server_id}/os-volume_attachments",
         "method": "GET",
         "service": "compute"
     },
     {
-        "path": "/v2.1/servers/{server_id}/os-volume_attachments",
-        "method": "POST",
-        "service": "compute"
-    },
-    {
         "path": "/v2.1/servers/{server_id}/os-volume_attachments/{volume_id}",
         "method": "GET",
-        "service": "compute"
-    },
-    {
-        "path": "/v2.1/servers/{server_id}/os-volume_attachments/{volume_id}",
-        "method": "PUT",
-        "service": "compute"
-    },
-    {
-        "path": "/v2.1/servers/{server_id}/os-volume_attachments/{volume_id}",
-        "method": "DELETE",
         "service": "compute"
     },
     {
@@ -596,36 +540,6 @@ Here is a comprehensive configuration that includes VM management, image managem
     },
     {
         "path": "/v2.1/os-keypairs/{keypair_name}",
-        "method": "DELETE",
-        "service": "compute"
-    },
-    {
-        "path": "/v2.1/servers/{server_id}/tags",
-        "method": "GET",
-        "service": "compute"
-    },
-    {
-        "path": "/v2.1/servers/{server_id}/tags",
-        "method": "PUT",
-        "service": "compute"
-    },
-    {
-        "path": "/v2.1/servers/{server_id}/tags",
-        "method": "DELETE",
-        "service": "compute"
-    },
-    {
-        "path": "/v2.1/servers/{server_id}/tags/{tag}",
-        "method": "GET",
-        "service": "compute"
-    },
-    {
-        "path": "/v2.1/servers/{server_id}/tags/{tag}",
-        "method": "PUT",
-        "service": "compute"
-    },
-    {
-        "path": "/v2.1/servers/{server_id}/tags/{tag}",
         "method": "DELETE",
         "service": "compute"
     },
@@ -805,6 +719,41 @@ Here is a comprehensive configuration that includes VM management, image managem
         "service": "network"
     },
     {
+        "path": "/v2.0/ports/{port_id}",
+        "method": "GET",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/ports/{port_id}",
+        "method": "PUT",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/ports/{port_id}",
+        "method": "DELETE",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/ports",
+        "method": "GET",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/ports",
+        "method": "POST",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/ports/{port_id}/add_allowed_address_pairs",
+        "method": "PUT",
+        "service": "network"
+    },
+    {
+        "path": "/v2.0/ports/{port_id}/remove_allowed_address_pairs",
+        "method": "PUT",
+        "service": "network"
+    },
+    {
         "path": "/v2.0/routers",
         "method": "GET",
         "service": "network"
@@ -896,8 +845,8 @@ Here is a comprehensive configuration that includes VM management, image managem
 
 For more information, visit the [OpenStack Application Credentials documentation](https://docs.openstack.org/keystone/latest/user/application_credentials.html).
 
-[Compute Service API](https://docs.openstack.org/api-ref/compute/index.html)
+[Compute Service API reference](https://docs.openstack.org/api-ref/compute/index.html)
 
-[Image Service API](https://docs.openstack.org/api-ref/image/index.html)
+[Image Service API reference](https://docs.openstack.org/api-ref/image/index.html)
 
-[Networking Service API](https://docs.openstack.org/api-ref/network/index.html)
+[Networking Service API reference](https://docs.openstack.org/api-ref/network/index.html)
