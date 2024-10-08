@@ -12,6 +12,11 @@ description: >
 will walk you through creating and configuring these credentials to manage virtual machines (VMs), images, and networks
 effectively.
 
+### Scope
+
+Managing volumes is out of scope for this guide. You can still create functioning VMs without any problems.
+Connectivity to external networks is also out of scope for this guide (internal networking works completly fine). Creating ports is also out of scope, but you can add existing ports to routers. Please contact your network admin if you need help setting up this kind of things.
+
 ### Steps to Create an Application Credential
 
 1. Navigate to Identity - Application Credentials in the [Wavestack Dashboard](https://dashboard.wavestack.de/identity/application_credentials/) and click on `Create Application Credential`.
