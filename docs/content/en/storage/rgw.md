@@ -71,6 +71,9 @@ please refer to [Ceph S3 Documentation](https://docs.ceph.com/en/latest/radosgw/
 This includes instructions on how to use advanced features such as object lock/immutability/worm,
 which can be crucial for implementing compliance and data retention policies.
 
+{{% alert color="info" %}} Some clients (like GitLab) and SDKs need the signature version of 
+the S3-API hard-set to 2 on the client's side to ensure maximal compatibility.{{% /alert %}}
+
 ### EC2 Credentials
 
 To access the S3 API with any other client than the Openstackclient like [AWS CLI][awscli]
