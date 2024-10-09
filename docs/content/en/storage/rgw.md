@@ -68,7 +68,7 @@ or an S3 API-compatible tool.
 
 For more detailed information on the features of the S3-API,
 please refer to [Ceph S3 Documentation](https://docs.ceph.com/en/latest/radosgw/s3/).
-This includes instructions on how to use advanced features such as object-lock, immutability, 
+This includes instructions on how to use advanced features such as object lock, immutability, 
 and WORM, which can be crucial for implementing compliance and data retention policies.
 
 {{% alert color="info" %}} Some clients (like GitLab) and SDKs need the signature version of 
