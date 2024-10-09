@@ -20,13 +20,23 @@ procedures:
 
 ## SLAs
 
-| Service                        | Availability        |
-|--------------------------------|---------------------|
-| Compute instances (regional)   | 99.95%              |
-| Compute instances (zonal)      | 99.5%               |
-| OpenStack API                  | 99.9%               |
-| RGW Objectstore                | 99.925%             |
-| WKE (Waveon Kubernetes Engine) | None (tech preview) |
+| Service                           | Availability        |
+|-----------------------------------|---------------------|
+| Compute instances (regional)      | 99.95%              |
+| Compute instances (zonal)         | 99.5%               |
+| OpenStack API                     | 99.9%               |
+| RGW Objectstore                   | 99.925%             |
+| WKE (Wavestack Kubernetes Engine) | None (tech preview) |
+
+{{% alert color="info" %}}
+**Notes:**
+
+- **Compute instances (regional)**: This availability rate ensures that you can create or use compute instances in one
+  of the availability zones within the region. You have the flexibility to choose from any available availability
+  zone within that region, offering you resilience and redundancy.
+- **Compute instances (zonal)**: Unlike regional instances, which offer availability across multiple zones, zonal
+  instances are confined to a single availability zone. This is reflected in a lower availability guarantee.
+  {{% /alert %}}
 
 ## Service level criteria
 
@@ -36,17 +46,25 @@ respective system for the user was available as intended.
 The system availability refers to the respective monthly
 average after deduction of the following:
 
-   1. Downtime during announced maintenance windows
-   1. Denial of Service (DoS) attacks
-   1. Malfunctions / failures due to force majeure
-   1. Recovery times
-   1. Time between the occurrence of the unavailability and the
-      receipt of the fault report
-   1. Regulatory interventions
-   1. Unavailability caused by the user, either consciously or
-      unconsciously
-   1. Unavailability that could have been remedied independently by
-      the user
+1. Downtime during announced maintenance windows
+1. Denial of Service (DoS) attacks
+1. Malfunctions / failures due to force majeure
+1. Recovery times
+1. Time between the occurrence of the unavailability and the
+   receipt of the fault report
+1. Regulatory interventions
+1. Unavailability caused by the user, either consciously or
+   unconsciously
+1. Unavailability that could have been remedied independently by
+   the user
+
+{{% alert color="warning" %}}
+**Exclusion of certain services:**
+
+Please note that our standard cloud service offerings do not include any data backup services. However, we understand
+the importance of data protection for business continuity. If you need a solution, please do not hesitate to contact our
+customer support. We will be happy to discuss and develop a solution to meet your specific requirements.
+{{% /alert %}}
 
 ## Service level penalties
 
