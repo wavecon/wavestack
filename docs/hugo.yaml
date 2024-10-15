@@ -55,6 +55,7 @@ params:
     sidebar_menu_compact: false
     sidebar_menu_foldable: true
     sidebar_search_disable: false
+    showLightDarkModeMenu: false
 
     feedback:
       enable: false

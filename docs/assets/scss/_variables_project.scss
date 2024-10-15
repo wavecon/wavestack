@@ -5,13 +5,23 @@ $white: #FFFFFF;
 $green: #00FF8C;
 $blue: #30BEFF;
 $light-blue: #97DFFF;
+
 $primary: #0D1A2D;
 $secondary: #FFFFFF;
 $dark: #13233B;
 $light: #F5ED1E;
+
+$body-tertiary-bg: rgba($primary,0.5);
+$body-tertiary-color: $light-blue;
+
 $google_font_name: "Roboto";
 
 $td-sidebar-tree-root-color: $light-blue;
 $border-color: $primary;
 $radius-l: 1rem;
 $pad-l: 1rem;
+
+
+$table-color: $secondary;
+$table-bg: $dark;
+$table-accent-bg: transparent;
