@@ -193,13 +193,16 @@ Typical workloads:
 | SCS-1L6  | 8    | 4      | 20   | rbd\_fast | 1.25              | 2.5            |
 | SCS-1L7  | 16   | 8      | 0    | rbd\_fast | 1.25              | 2.5            |
 
+## Pricing and Billing
 
-## Pricing with CPU-Shares
+At Wavestack, all instances are charged on an hourly basis, providing flexible and transparent pricing that adjusts to your usage.
 
-In order to enable pricing that is as fair as possible, we have designed 
+### Pricing with CPU-Shares
+
+In order to enable pricing that is as fair as possible, we have designed
 “CPU shares”. This means we can also differentiate between the different
  core types in pricing. Each CPU type corresponds to a certain amount of
- shares. The amount of shares mentioned on the invoice corresponds to 
+ shares. The amount of shares mentioned on the invoice corresponds to
 the following table:
 
 | CPU-Type | amount of shares |
