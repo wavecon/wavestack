@@ -213,16 +213,6 @@ the following table:
 
 ## Notes
 
-### Storage Types / IOPS
-
-Performance attributes differ between storage/disk types, which are
-summarised in the table below:
-
-|           | Average IOPS | Burst IOPS | Average Throughput | Burst Throughput |
-| --------- | ------------ | ---------- | ------------------ | ---------------- |
-| rdb\_fast | 1500         | 10000      | 0.25               | 0.5              |
-| ssd       | 10000        | 10000      | 0.75               | 0.75             |
-
 ### Units
 
 Information in this document is provided in the following units:
