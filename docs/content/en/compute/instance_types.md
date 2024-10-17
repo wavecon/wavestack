@@ -196,10 +196,10 @@ Typical workloads:
 
 ## Pricing with CPU-Shares
 
-In order to enable pricing that is as fair as possible, we have designed 
+In order to enable pricing that is as fair as possible, we have designed
 “CPU shares”. This means we can also differentiate between the different
  core types in pricing. Each CPU type corresponds to a certain amount of
- shares. The amount of shares mentioned on the invoice corresponds to 
+ shares. The amount of shares mentioned on the invoice corresponds to
 the following table:
 
 | CPU-Type | amount of shares |
@@ -209,16 +209,6 @@ the following table:
 
 
 ## Notes
-
-### Storage Types / IOPS
-
-Performance attributes differ between storage/disk types, which are
-summarised in the table below:
-
-|           | Average IOPS | Burst IOPS | Average Throughput | Burst Throughput |
-| --------- | ------------ | ---------- | ------------------ | ---------------- |
-| rdb\_fast | 1500         | 10000      | 0.25               | 0.5              |
-| ssd       | 10000        | 10000      | 0.75               | 0.75             |
 
 ### Units
 
