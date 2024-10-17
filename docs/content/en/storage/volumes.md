@@ -24,13 +24,27 @@ to list all currently available volume types:
 
 Currently, these types are:
 
-| Volume Type      | Description                                      |
-|------------------|--------------------------------------------------|
-| rbd\_fast        | rbd_fast is our storage class for full flash block storage, based on Ceph RBD. It is a generally usable volume that is specially designed for applications with high input/output requirements. Thanks to the full flash architecture, it enables extremely fast data processing and has very low latencies. For data security and reliability, the data is replicated three times, providing high data redundancy.         |
-| LUKS             | Similar to rbd\_fast, but with automated encryption added on top for enhanced data security. |
+| Volume Type | Description                                      |
+|------------|--------------------------------------------------|
+| rbd\_fast  | rbd_fast is our storage class for full flash block storage, based on Ceph RBD. It is a generally usable volume that is specially designed for applications with high input/output requirements. Thanks to the full flash architecture, it enables extremely fast data processing and has very low latencies. For data security and reliability, the data is replicated three times, providing high data redundancy.         |
+| LUKS       | Similar to rbd\_fast, but with automated encryption added on top for enhanced data security. |
 
 ### Local SSD/NVMe Storage
 For quick and low-latency workloads, local SSD/NVMe backed storage is recommended. Choose an SCS-standard flavor with 'p' (NVMe) or 's' (SSD) at the end of its name. For example, SCS-2V-8-20**s** signifies 20GB local SSD storage. Be aware that local storage is ephemeral, meaning data gets lost if the instance is deleted. Information on the instances offered can be found here: [Instance types](/compute/instance_types)
+
+### Storage Types / IOPS
+
+Performance attributes differ between storage/disk types, which are
+summarised in the table below:
+
+| Volume Type | Average IOPS | Burst IOPS | Average Throughput | Burst Throughput |
+|-------------|--------------|------------|--------------------|------------------|
+| rdb\_fast   | 1500         | 10000      | 0.25               | 0.5              |
+| ssd         | 10000        | 10000      | 0.75               | 0.75             |
+
+{{% alert color="success" %}}
+Note: With sufficient retrieval size, we can provide more than 15,000 IOPS on volumes. Please contact our [support team](/support/) for more information.
+{{% /alert %}}
 
 ## Managing volumes
 
@@ -115,14 +129,14 @@ state.
 ```
 
 A snapshot can even be created of a volume that is currently in use by
-a running machine. 
+a running machine.
 
 {{% alert color="info" %}}
-In some cases creating a snapshot from an attached volume can result 
+In some cases creating a snapshot from an attached volume can result
 in a corrupted snapshot!
 {{% /alert %}}
 
-Thus, if you want to create such a snapshot, it is required to provide 
+Thus, if you want to create such a snapshot, it is required to provide
 the `--force` flag to the command.
 
 #### Creating/deleting volume backup
@@ -131,7 +145,7 @@ Volumes as well as volume snapshots can be backed up by utilizing the
 capabilities of the Cinder-Backup Service. Cinder-Backup saves backups
 to a pool inside another storage cluster which spans over all 3
 availability zones. This way Wavestack ensures backup data high
-availability. 
+availability.
 
 To create a volume backup, simply run:
 
