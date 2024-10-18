@@ -1,23 +1,22 @@
 ---
-title: "Advanced Role and Permission Concept"
+title: "Advanced Role and Permission Management"
 linkTitle: "Advanced Roles"
-weight: 2
+weight: 400
 description: >
   Guide to creating and configuring application credentials in Wavestack for managing VMs, images, and networks.
 ---
 
-## Advanced Role and Permission Concept
+While basic role management works well for most standard use cases, advanced scenarios may require more control.
+[Application Credentials](https://docs.openstack.org/keystone/latest/user/application_credentials.html) give you more flexibility in defining roles and more precise control over how you manage
+VMs, images, and networks in Wavestack. This guide will walk you through creating and configuring these credentials to
+manage virtual machines (VMs), images, and networks effectively.
 
-[Application Credentials](https://docs.openstack.org/keystone/latest/user/application_credentials.html) are a powerful way to define and assign roles flexibly and granularly in Wavestack. This guide
-will walk you through creating and configuring these credentials to manage virtual machines (VMs), images, and networks
-effectively.
-
-### Scope
+## Scope
 
 Managing volumes is out of scope for this guide. You can still create functioning VMs without any problems.
 Connectivity to external networks is also out of scope for this guide (internal networking works completely fine). Creating ports is also out of scope, but you can add existing ports to routers. Please contact your network admin if you need help setting up this kind of things.
 
-### Steps to Create an Application Credential
+## Steps to Create an Application Credential
 
 1. Navigate to Identity - Application Credentials in the [Wavestack Dashboard](https://dashboard.wavestack.de/identity/application_credentials/) and click on `Create Application Credential`.
 
@@ -39,7 +38,7 @@ Connectivity to external networks is also out of scope for this guide (internal 
   additional application credentials or keystone trusts. If your application credential needs to be able to perform
   these actions, check `Unrestricted`. However, this is generally not recommended for security purposes.
 
-### Example Configuration for VM Management
+## Example Configuration for VM Management
 
 ```json
 [
@@ -136,7 +135,7 @@ Connectivity to external networks is also out of scope for this guide (internal 
 ]
 ```
 
-### Example Configuration for Image Management
+## Example Configuration for Image Management
 
 ```json
 [
@@ -223,7 +222,7 @@ Connectivity to external networks is also out of scope for this guide (internal 
 ]
 ```
 
-### Example Configuration for Network Management
+## Example Configuration for Network Management
 
 ```json
 [
@@ -445,7 +444,7 @@ Connectivity to external networks is also out of scope for this guide (internal 
 ]
 ```
 
-### Comprehensive Example
+## Comprehensive Example
 
 Here is a comprehensive configuration that includes VM management, image management, and network management:
 
@@ -846,7 +845,7 @@ Here is a comprehensive configuration that includes VM management, image managem
 ]
 ```
 
-### Additional Information
+## Additional Information
 
 For more information, visit the [OpenStack Application Credentials documentation](https://docs.openstack.org/keystone/latest/user/application_credentials.html).
 
