@@ -3,7 +3,7 @@ title: "Project Management"
 linkTitle: "Project Management"
 description: "Manage projects on Wavestack"
 type: "docs"
-weight: 2
+weight: 200
 ---
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- Copyright (C) 2023 Wavecon GmbH -->

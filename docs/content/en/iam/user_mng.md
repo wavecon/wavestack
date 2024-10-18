@@ -3,7 +3,7 @@ title: "User Management"
 linkTitle: "User Management"
 description: "Manage Users on Wavestack"
 type: "docs"
-weight: 1
+weight: 100
 ---
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- Copyright (C) 2023 Wavecon GmbH -->

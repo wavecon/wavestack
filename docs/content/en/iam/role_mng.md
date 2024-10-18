@@ -3,7 +3,7 @@ title: "Role Management"
 linkTitle: "Role Management"
 description: "Manage user roles on Wavestack"
 type: "docs"
-weight: 3
+weight: 300
 ---
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- Copyright (C) 2023 Wavecon GmbH -->
