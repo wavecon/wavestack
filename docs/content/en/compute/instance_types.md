@@ -160,8 +160,8 @@ well suited for high-performance computing workloads.
 Instance types with NVIDIA A30 Tensor Core GPUs are currently only offered in the muc-a availability zone.
 
 |                         | vCPU | Memory | Disk | Disk Type | Average Bandwidth | Peak Bandwidth | VRam |
-| ----------------------- | ---- | ------ | ---- | --------- | ----------------- | -------------- | ---- |
-| SCS-16V-64-500s_GNa-14h | 16   | 64     | 500  | ssd       | 2.5               | 10             | 6    |
+|-------------------------|------|--------|------|-----------|-------------------|----------------|------|
+| SCS-64V-256-500s_GNa-24h| 64   | 256    | 500  | ssd       | 2.5               | 10             | 24   |
 
 {{% alert color="success" %}}
 
