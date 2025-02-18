@@ -19,7 +19,7 @@ We at Wavecon GmbH are proud to be ISO/IEC 27001 certified for more than 10 year
 internationally recognized standard for Information Security Management Systems (ISMS). It demonstrates our ability to
 provide a high level of security for the information we manage.
 
-The certificate is available [here][assets-reference-ISO_IEC_27001_2017].
+The certificate is available [here][assets-reference-ISO_IEC_27001_2022].
 
 ## C5 for the Wavestack (pending)
 
@@ -41,6 +41,6 @@ customers.
 Learn more about the certification of noris network AG [here][noris-company-certifications-en].
 
 <!-- References -->
-[assets-reference-ISO_IEC_27001_2017]: /assets/reference/ISO_IEC_27001_2017.pdf
+[assets-reference-ISO_IEC_27001_2022]: /assets/reference/ISO_IEC_27001_2022.pdf
 [bsi-c5-introduction]: https://www.bsi.bund.de/EN/Themen/Unternehmen-und-Organisationen/Informationen-und-Empfehlungen/Empfehlungen-nach-Angriffszielen/Cloud-Computing/Kriterienkatalog-C5/C5_Einfuehrung/C5_Einfuehrung_node.html
 [noris-company-certifications-en]: https://www.noris.de/en/company/certifications/
