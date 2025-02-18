@@ -45,6 +45,37 @@ The steps in this guide have been tested with the following versions:
 |                                    | Version  |
 |------------------------------------|----------|
 | openstackclient                    | v6.2.0   |
+| openstackclient                    | v6.6.0   |
+
+## Storage Placements
+
+We offer two different kind of storage placements, which represent different backend types:
+
+{{% alert color="info" %}}
+
+It is important, that you need to select the correct placement, if it should not be in default-placement, on bucket creation time.
+It can not be changed afterwards.
+
+s3cmd example:
+
+s3cmd mb --bucket-location=":<PLACEMENT>" s3://my-test-bucket
+
+openstack example:
+
+openstack container create --storage-policy <PLACEMENT> my-test-bucket
+
+{{% /alert %}}
+
+| Placement                          | Backend Type    |  Cloud Points  | Information                                    | 
+|------------------------------------|-----------------|----------------|------------------------------------------------|
+| default-placement                  | MIXED HDD+FLASH | 1 per GB/Month | Should be best for most usecases               | 
+| express-onezone-placement          | FLASH Only      | 4 per GB/Month | Experimental, high performance, limited access |
+
+{{% alert color="warning" %}}
+
+Please be aware, that "express-onezone-placement" is experimental for now and we may set a quota of 10TB on your bucket.
+
+{{% /alert %}}
 
 ## Access the Wavestack dashboard
 
