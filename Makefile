@@ -9,6 +9,9 @@ help:  ## Show help/usage information
 serve-docs: ## Run documentation preview server
 	$(MAKE) -C docs serve
 
+serve-docker: ## Run documentation preview server inside docker
+	$(MAKE) -C docs serve-docker
+
 build-docs: ## Build documentation
 	$(MAKE) -C docs build
 
