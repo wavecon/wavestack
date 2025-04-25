@@ -39,8 +39,8 @@ summarised in the table below:
 
 | Volume Type | Average IOPS | Burst IOPS | Average Throughput | Burst Throughput |
 |-------------|--------------|------------|--------------------|------------------|
-| rdb\_fast   | 1500         | 10000      | 0.25               | 0.5              |
-| ssd         | 10000        | 10000      | 0.75               | 0.75             |
+| rdb\_fast   | 3000         | 10000      | 250 MB/s           | 500 MB/s         |
+| ssd         | 5000         | 20000      | 500 MB/s           | 1000 MB/s        |
 
 {{% alert color="success" %}}
 Note: With sufficient retrieval size, we can provide more than 15,000 IOPS on volumes. Please contact our [support team](/support/) for more information.
