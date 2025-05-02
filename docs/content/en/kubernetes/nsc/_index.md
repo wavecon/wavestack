@@ -131,14 +131,20 @@ The full range of options is showcased in the upstream [example shoot config](ht
 
 #### Networking
 
-The default network layout for shoot clusters is limited to 64 nodes and can not be changed after initial cluster creation:
+The default network layout for shoot clusters is the following. This can be changed in the shoot's specification:
 ```
 10.44.0.0/24 for nodes
 10.98.0.0/18 for services
 10.194.0.0/18 for pods
 ```
-
-If you need more nodes, adjust the networking ranges in the shoots YAML configuration during setup. Please refrain from using any of the following prefixes which are reserved for our infrastructure:
+Clusters created with these networking ranges limit the size of the cluster to:
+```
+110 pods per node
+60.500 services
+60.500 pods
+254 nodes
+```
+To increase these limits, set the networking ranges in the shoots YAML configuration appropriately during shoot declaration. **These settings can't be retroactively changed in existing clusters, so please take care to configure them appropriately during cluster creation.** Please refrain from using any of the following prefixes which are reserved for our infrastructure:
 ```
 10.42.0.0/15
 10.96.0.0/15
