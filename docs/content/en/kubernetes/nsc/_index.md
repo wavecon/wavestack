@@ -363,6 +363,16 @@ spec:
 ```
 Full documentation on the etcd encryption feature can be found [here][etcd-encryption]
 
+## Security - Seccomp Profile RuntimeDefault
+
+nSC allows users to change the default seccompProfile from the unrestricted `Unconfined` to the more restricted `RuntimeDefault` by specifying the following in your shoot declaration:
+```
+spec:
+  kubernetes:
+    kubelet:
+      seccompDefault: true
+```
+
 ## Security - PodSecurity Admission Plugins
 
 nSC allows users to configure their podsecurity admission defaults in the shoot declaration. These are used if mode labels are not set by an application:
