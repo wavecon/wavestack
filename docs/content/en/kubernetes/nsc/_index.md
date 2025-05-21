@@ -189,6 +189,18 @@ If you’re managing only a single cluster, you can rename the file to `~/.kube/
 ❯ export KUBECONFIG=~/.kube/kubeconfig-gardenlogin--<project_id>--<cluster_name>.yaml
 ```
 
+#### Login
+
+After successful installation of the required tools, you should be able to find the following binaries:
+* kubectl
+* kubectl-gardenlogin
+* kubectl-oidc_login
+
+Additionally, the following files were created:
+* ~/.garden/gardenctl-v2.yaml
+* ~/.garden/kubeconfig-garden.yaml
+* ~/.kube/config # or the name you chose
+
 Check your available nodes by running:
 
 ```cli
