@@ -356,7 +356,7 @@ Please note that nSC does *not* back up customer-generated content. It is the cu
 
 ## Security - etcd encryption
 
-nSC backs up the shoot's etcd on a regular basis. This backup is used for migrations of control-planes between seeds and to restore the etcd. Please note this is done as best-effort and that the  Please specify the etcd resources that need to be [encrypted](#security---etcd-encryption).
+nSC backs up the shoot's etcd on a regular basis. This backup is used for migrations of control-planes between seeds and to restore the etcd. Please note this is done on a best-effort basis and the final responsibility for user data backup lies with the customer.
 
 Shoot declarations can specify which etcd fields need to be encrypted:
 ```
