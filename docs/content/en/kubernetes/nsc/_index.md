@@ -87,6 +87,8 @@ Choose the machine type for your worker nodes. Wavestack follows the [Sovereign 
 
 - [SCS Flavor Naming Standard][scs-flavor-naming-v3]
 
+Smaller flavors that do not include disk storage are listed lower down. If you choose to use one, make sure to specify a 'custom' volume. Otherwise, the installation will fail. We recommend a minimum volume size of 50GB.
+
 ##### Machine Image
 
 Similar to Kubernetes version this specifies the operating system image. It's recommended to always use the latest supported version. Please note our policy on [supported machine images](#flatcar)
@@ -95,9 +97,7 @@ Similar to Kubernetes version this specifies the operating system image. It's re
 
 Clusters with at least one worker group having `minimum < maximum` nodes will have an autoscaler deployment, allowing dynamic scaling of worker nodes based on demand.
 
-The autoscaler is a modified version of the Kubernetes [cluster-autoscaler][k8s-cluster-autoscaler] with additional support for [gardener/machine-controller-manager][gh-gardener-machine-controller-manager].
-
-nSC requires clusters to consist of at least two nodes.
+nSC requires clusters to consist of at least two nodes and at least 50GB of disk storage per node. Smaller flavor's
 
 ##### Zones
 
@@ -420,18 +420,6 @@ spec:
             # Array of namespaces to exempt.
             namespaces: []
 ```
-
-## Cost Estimation
-
-Due to the service's dynamic nature, the actual costs can vary significantly based on factors such as cluster size, storage usage, load balancers, public IP reservations, hibernation and the utilization of the auto-scaling feature.
-
-The minimal estimate for the smallest possible cluster (in cloud points) is as follows:
-
-### Cloud Points
-- **1x Shoot Cluster Fee**: 1.000.000 CP  # FIXME add real price and product name
-- **2x SCS-4V-8-20**: 1.000.000 CP
-
-A cluster must always include at least two nodes. This minimal configuration does not require additional load balancers, public IPs or PVC storage, though these can be added by the user as needed.
 
 ## Security + C5 Compliant Shoot Clusters
 
