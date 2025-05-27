@@ -87,7 +87,7 @@ Choose the machine type for your worker nodes. Wavestack follows the [Sovereign 
 
 - [SCS Flavor Naming Standard][scs-flavor-naming-v3]
 
-Smaller flavors that do not include disk storage are listed lower down. If you choose to use one, make sure to specify a 'custom' volume. Otherwise, the installation will fail. We recommend a minimum volume size of 50GB.
+Openstack flavors which do not include disk storage are also included. For ease of use they are sorted below, given that using them requires specifying a 'custom' volume with a recommended size of at least 50GB.
 
 ##### Machine Image
 
