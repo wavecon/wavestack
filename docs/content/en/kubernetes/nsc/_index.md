@@ -97,6 +97,8 @@ Similar to Kubernetes version this specifies the operating system image. It's re
 
 Clusters with at least one worker group having `minimum < maximum` nodes will have an autoscaler deployment, allowing dynamic scaling of worker nodes based on demand.
 
+We recommend using at least two nodes to avoid disruptions. 
+
 ##### Zones
 
 Similar to [Control Plane High Availability](#control-plane-high-availability), you can also distribute your workers across different data centers within the same geolocation. Keep in mind that PVC storage is specific to each zone and not replicated between them. If you require replicated storage, consider our S3 storage.
