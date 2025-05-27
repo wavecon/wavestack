@@ -144,7 +144,9 @@ Clusters created with these networking ranges limit the size of the cluster to:
 60.500 pods
 254 nodes
 ```
-To increase these limits, set the networking ranges in the shoots YAML configuration appropriately during shoot declaration. **These settings can't be retroactively changed in existing clusters, so please take care to configure them appropriately during cluster creation.** Please refrain from using any of the following prefixes which are reserved for our infrastructure:
+To increase these limits, set the networking ranges in the shoots YAML configuration appropriately during shoot declaration. **These settings can't be retroactively changed in existing clusters, so please take care to configure them appropriately during cluster creation.**
+
+Please refrain from using any of the following prefixes which are reserved for our infrastructure:
 ```
 10.42.0.0/15
 10.96.0.0/15
@@ -202,7 +204,7 @@ After successful installation of the required tools, you should be able to find 
 * kubectl-gardenlogin
 * kubectl-oidc_login
 
-Additionally, the following files were created:
+Additionally, these files were created:
 * ~/.garden/gardenctl-v2.yaml
 * ~/.garden/kubeconfig-garden.yaml
 * ~/.kube/config # or the name you chose
@@ -245,21 +247,6 @@ Search for "log":
 
 ![](/assets/kubernetes/nsc/gardener-db-logging-dashboard-search.png)
 
-## Monitoring
-
-You can configure email receivers in the shoot spec to automatically send email notifications for predefined control plane alerts. 
-
-Example configuration:
-```cli
-spec:
-  monitoring:
-    alerting:
-      emailReceivers:
-      - <your_email_address>
-```
-
-If you require more customized alerts for control plane metrics, you can deploy your own Prometheus instance within your shoot's control plane. Using Prometheus federation, you can forward metrics from the Gardener-managed Prometheus to your custom Prometheus deployment. The credentials and endpoint for the Gardener-managed Prometheus are provided via the Gardener dashboard.
-
 ## Network observability
 
 Our default CNI cilium offers a free network observability feature called hubble:
@@ -283,42 +270,6 @@ Afterwards, running the following code will allow you to access a webfrontend of
 ❯ cilium hubble ui
 ℹ️  Opening "http://localhost:12000" in your browser...
 ```
-
-## Openstack Server Groups
-
-nSC allows the user to create a server group by the following shoot declaration add-ins. These make nSC aware of the cluster and can be useful to spread the workload over multiple hardware nodes.
-
-```
-spec:
-  provider:
-    type: openstack
-    workers:
-      - ...
-        providerConfig:
-          apiVersion: openstack.provider.extensions.gardener.cloud/v1alpha1
-          kind: WorkerConfig
-          serverGroup:
-            policy: soft-anti-affinity
-```
-
-## Registry Cache
-
-Our CRI containerd supports the use of [registry mirrors][registry-mirror]. This feature is helpful for bypassing registry rate limits (e.g., hub.docker.com) and integrating a centralized container security scanner. Here's an example of how to implement this:
-
-```
-spec:
-  extensions:
-  - type: registry-mirror
-    providerConfig:
-      apiVersion: mirror.extensions.gardener.cloud/v1alpha1
-      kind: MirrorConfig
-      mirrors:
-      - upstream: docker.io
-        hosts:
-        - host: "https://mirror.gcr.io"
-          capabilities: ["pull"]
-```
-
 ## DNS
 
 Per default, our openstack-designate creates a subdomain for your cluster:
@@ -347,26 +298,65 @@ Using your own subdomain can be achieved in different ways:
 
 ## Certificates
 
-nSC allows the user to comfortably request free certificates via DNS-based Let’s Encrypt challenges. This feature depends on properly setup [DNS](#dns), so we strongly advice to follow that section of the guide first. [This](https://github.com/gardener/gardener-extension-shoot-cert-service/blob/master/docs/usage/request_default_domain_cert.md) documentation covers, how to set up certificates for the default subdomain. For advanced usecases, check out the complete [upstream documentation](https://github.com/gardener/gardener-extension-shoot-cert-service/tree/master/docs/usage).
+nSC includes tooling to comfortably request free certificates via DNS-based Let’s Encrypt challenges. This feature depends on properly setup [DNS](#dns), so we strongly advice to follow that section of the guide first. [This](https://github.com/gardener/gardener-extension-shoot-cert-service/blob/master/docs/usage/request_default_domain_cert.md) documentation covers, how to set up certificates for the default subdomain. For advanced usecases, check out the complete [upstream documentation](https://github.com/gardener/gardener-extension-shoot-cert-service/tree/master/docs/usage).
 
-## Data Backup and Recovery
+## Openstack Server Groups
 
-Please note that nSC does *not* back up customer-generated content. It is the customer's responsibility to back up worker node objects such as metadata (e.g., services, ingresses, pods, etc.), the content of PVs (e.g., prometheus-01), and S3 buckets. [Velero][velero]  is a popular open-source tool that can assist with this task.
+nSC allows the user to create a server group by the following shoot declaration add-ins. These make nSC aware of the cluster and can be useful to spread the workload over multiple hardware nodes.
 
-However, nSC *does* take responsibility for backing up control-plane content, including the shoot's etcd, on a regular basis. Please specify the etcd resources that need to be [encrypted](#security---etcd-encryption).
-
-## Security - Disabling ssh access
-
-SSH access can be disabled by specifying the following setting in the shoot declaration:
 ```
 spec:
   provider:
-    workersSettings:
-      sshAccess:
-        enabled: false
+    type: openstack
+    workers:
+      - ...
+        providerConfig:
+          apiVersion: openstack.provider.extensions.gardener.cloud/v1alpha1
+          kind: WorkerConfig
+          serverGroup:
+            policy: soft-anti-affinity
 ```
 
+## Monitoring
+
+You can configure email receivers in the shoot spec to automatically send email notifications for predefined control plane alerts. 
+
+Example configuration:
+```cli
+spec:
+  monitoring:
+    alerting:
+      emailReceivers:
+      - <your_email_address>
+```
+
+If you require more customized alerts for control plane metrics, you can deploy your own Prometheus instance within your shoot's control plane. Using Prometheus federation, you can forward metrics from the Gardener-managed Prometheus to your custom Prometheus deployment. The credentials and endpoint for the Gardener-managed Prometheus are provided via the Gardener dashboard.
+
+## Registry Cache
+
+Our CRI containerd supports the use of [registry mirrors][registry-mirror]. This feature is helpful for bypassing registry rate limits (e.g., hub.docker.com) and integrating a centralized container security scanner. Here's an example of how to implement this:
+
+```
+spec:
+  extensions:
+  - type: registry-mirror
+    providerConfig:
+      apiVersion: mirror.extensions.gardener.cloud/v1alpha1
+      kind: MirrorConfig
+      mirrors:
+      - upstream: docker.io
+        hosts:
+        - host: "https://mirror.gcr.io"
+          capabilities: ["pull"]
+```
+
+## Data Backup and Recovery
+
+Please note that nSC does *not* back up customer-generated content. It is the customer's responsibility to back up worker node objects such as metadata (e.g., services, ingresses, pods, etc.), the content of PVs (e.g., prometheus-01) and S3 buckets. [Velero][velero]  is a popular open-source tool that can assist with this task.
+
 ## Security - etcd encryption
+
+nSC backs up the shoot's etcd on a regular basis. This backup is used for migrations of control-planes between seeds and to restore the etcd. Please note this is done as best-effort and that the  Please specify the etcd resources that need to be [encrypted](#security---etcd-encryption).
 
 Shoot declarations can specify which etcd fields need to be encrypted:
 ```
@@ -380,6 +370,17 @@ spec:
           - customresource.fancyoperator.io
 ```
 Full documentation on the etcd encryption feature can be found [here][etcd-encryption]
+
+## Security - Disabling ssh access
+
+SSH access can be disabled by specifying the following setting in the shoot declaration:
+```
+spec:
+  provider:
+    workersSettings:
+      sshAccess:
+        enabled: false
+```
 
 ## Security - Seccomp Profile RuntimeDefault
 
