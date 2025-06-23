@@ -14,7 +14,7 @@ nSC is built using [Gardener][gardener], and you can find more information in th
 
 {{% alert color="warning" %}}
 
-Please note that nSC is currently in **internal-alpha-test** and has not yet been released as GA.
+Please note that nSC is currently in **internal-pre-release** and has not yet been released as GA.
 
 We encourage you to try nSC, but keep in mind that we are unable to provide SLAs for this product at this time.
 
