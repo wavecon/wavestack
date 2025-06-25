@@ -22,6 +22,14 @@ build: deps ## Build documentation
 		--minify \
 		--enableGitInfo
 
+serve-docker: ## Run documentation preview server inside docker
+	docker run -it --rm --name hugo \
+		-v $(shell pwd):/src -p 1313:1313 \
+		hugomods/hugo server \
+		--buildDrafts \
+		--buildFuture \
+		--disableFastRender
+
 build-preview: deps ## Build documentation (preview environment)
 	hugo \
 		--baseURL $(DEPLOY_PRIME_URL) \
