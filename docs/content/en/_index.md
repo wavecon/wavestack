@@ -1,5 +1,5 @@
 ---
-title: "nSC Documentation"
+title: "Wavestack Documentation"
 linkTitle: "Docs"
 type: "docs"
 weight: 1
@@ -17,11 +17,11 @@ cascade:
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- Copyright (C) 2023 Wavecon GmbH -->
 
-Welcome to the [noris][noris] Sovereign Cloud (nSC) Documentation!
+Welcome to the Wavestack Documentation!
 
-The noris Sovereign Cloud is a powerful, sovereign cloud solution built entirely on open-source technology and developed in compliance with the Sovereign Cloud Stack standards. Offered by noris network AG, this cutting-edge platform delivers exceptional performance, compliance, and security tailored to the needs of modern enterprises.
+The Wavestack is a powerful, sovereign cloud solution built entirely on open-source technology and developed in compliance with the Sovereign Cloud Stack standards. Offered by noris network AG, this cutting-edge platform delivers exceptional performance, compliance, and security tailored to the needs of modern enterprises.
 
-Key Advantages of the noris Sovereign Cloud:
+Key Advantages of the Wavestack:
 
 ✅ Unmatched Flexibility – Leverage Infrastructure-as-a-Service (IaaS) and Container-as-a-Service (CaaS) solutions to scale seamlessly.
 
@@ -33,7 +33,7 @@ Key Advantages of the noris Sovereign Cloud:
 
 ✅ Advanced Kubernetes Support – Enabling seamless container orchestration for modern workloads.
 
-This documentation provides all the insights you need to maximize the potential of the noris Sovereign Cloud. Whether you're setting up, managing, or exploring advanced features, our step-by-step guidance ensures a smooth and efficient experience with our next-generation cloud platform.
+This documentation provides all the insights you need to maximize the potential of the Wavestack. Whether you're setting up, managing, or exploring advanced features, our step-by-step guidance ensures a smooth and efficient experience with our next-generation cloud platform.
 
 ## Open Source
 
