@@ -3,11 +3,11 @@ title: "Creating your first Compute Instance via the horizon ui"
 linkTitle: "GettingStarted with UI"
 weight: 100
 description: >
-  Description how to get started in the noris Sovereign Cloud (nSC) by creating a compute instance (virtual machine) with Internet access plus SSH access to the VM.
+  Description how to get started in the Wavestack by creating a compute instance (virtual machine) with Internet access plus SSH access to the VM.
 ---
 
 Together We will build a network with a router and connect an instance to it.
- This is only a very simple getting started introduction to get a grasp of how to handle those utilities. We will use the [nSC dashboard](https://dashboard.wavestack.de/).
+ This is only a very simple getting started introduction to get a grasp of how to handle those utilities. We will use the [Wavestack dashboard](https://dashboard.wavestack.de/).
 
 # Introductory
 
